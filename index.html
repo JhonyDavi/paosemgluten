@@ -3,290 +3,537 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicativo Pães Sem Glúten Premium — Chef Carla Ramos</title>
+    <title>Protocolo Massas de Ouro — O Método Definitivo</title>
+    <meta name="description" content="Aprenda a técnica de confeitaria inclusiva para criar bolos e massas que não esfarelam. Sistema de Liga Estrutural em 3 passos.">
     
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --bg: #FDF8F0;
-            --text-dark: #1A0F08;
-            --text-light: #5C4033;
-            --accent: #D4891A;
-            --cta: #2D5A27;
-            --danger: #9E2A2B;
+            --cream: #FDF8F0;
+            --brown-dark: #3D1F0D;
+            --brown-mid: #6B3F1E;
+            --gold: #D4891A;
+            --gold-light: #F2C46D;
+            --green: #4A7C59;
+            --green-dark: #2D5240;
             --white: #FFFFFF;
-            --border: #E8E0D8;
+            --gray-soft: #F5F0E8;
+            --danger: #9E2A2B;
         }
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text-dark); line-height: 1.6; }
-        
-        .container { width: 100%; max-width: 1050px; margin: 0 auto; padding: 0 25px; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 800; line-height: 1.1; }
-
-        /* HEADER TIMER */
-        .top-timer { background: var(--danger); color: white; text-align: center; padding: 10px 0; font-weight: 800; font-size: 13px; position: sticky; top: 0; z-index: 1000; letter-spacing: 0.5px; }
-
-        /* HERO SECTION */
-        .hero { padding: 60px 0; background: linear-gradient(rgba(253,248,240,0.8), rgba(253,248,240,0.8)), url('hero_bg.jpg') center/cover; }
-        .hero-inner { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
-        .hero-content { flex: 1.2; min-width: 320px; text-align: left; }
-        .hero-img { flex: 0.8; min-width: 320px; }
-        .hero-img img { width: 100%; border-radius: 20px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); border: 8px solid white; }
-
-        .hero .badge { background: var(--white); color: var(--accent); padding: 6px 12px; border-radius: 5px; font-weight: 800; font-size: 12px; margin-bottom: 15px; display: inline-block; border: 1px solid var(--border); }
-        .hero h1 { font-size: clamp(34px, 5vw, 52px); margin-bottom: 20px; }
-        .hero .sub { font-size: 18px; color: var(--text-light); margin-bottom: 35px; font-weight: 500; border-left: 4px solid var(--accent); padding-left: 20px; }
-        
-        .main-cta { 
-            display: inline-block; background: var(--cta); color: white; padding: 22px 45px; 
-            border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 19px;
-            box-shadow: 0 15px 35px rgba(45, 90, 39, 0.3); transition: 0.3s;
-            animation: pulse-green 2s infinite; text-transform: uppercase; text-align: center;
-        }
-        @keyframes pulse-green {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--cream); 
+            color: var(--brown-dark); 
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* PAIN SECTION */
-        .pain { background: var(--white); padding: 90px 0; }
-        .pain h2 { text-align: center; margin-bottom: 60px; }
-        .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .pain-card { background: var(--bg); padding: 40px; border-radius: 20px; position: relative; border: 1px solid #f1f1f1; }
-        .pain-card i { position: absolute; top: -15px; right: 20px; font-size: 40px; color: var(--danger); opacity: 0.2; }
-        .pain-card h4 { font-size: 20px; margin-bottom: 12px; color: var(--danger); }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.2; font-weight: 800; }
+        .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-        /* AUTHORITY */
-        .authority { padding: 100px 0; background: var(--bg); }
-        .auth-flex { display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
-        .auth-img { flex: 1; }
-        .auth-img img { width: 100%; border-radius: 30px; box-shadow: 20px 20px 0 var(--accent); }
-        .auth-text { flex: 1.3; }
-        .auth-text h2 { margin-bottom: 30px; }
-        .auth-text p { margin-bottom: 20px; font-size: 17px; }
+        /* SECTION PADDING */
+        section { padding: 60px 0; }
+        @media (min-width: 768px) { section { padding: 100px 0; } }
 
-        /* BONUSES */
-        .bonuses { padding: 90px 0; background: var(--white); }
-        .bonus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .bonus-card { background: var(--white); border: 2px dashed var(--accent); padding: 30px; border-radius: 15px; position: relative; }
-        .bonus-tag { position: absolute; top: -12px; left: 20px; background: var(--danger); color: white; padding: 4px 10px; font-size: 11px; font-weight: 800; border-radius: 4px; }
-        .bonus-card h3 { font-size: 18px; margin-bottom: 10px; color: var(--accent); }
-        .bonus-card .val { text-decoration: line-through; opacity: 0.4; font-size: 13px; }
-
-        /* OFFER BOX */
-        .offer { padding: 100px 0; text-align: center; }
-        .offer-card { 
-            background: var(--text-dark); color: white; padding: 60px 40px; 
-            border-radius: 40px; max-width: 700px; margin: 0 auto; box-shadow: 0 40px 80px rgba(0,0,0,0.3);
-        }
-        .offer-card h2 { color: var(--accent); font-size: 38px; margin-bottom: 25px; }
-        .offer-card .inc { list-style: none; text-align: left; max-width: 400px; margin: 0 auto 30px; font-size: 15px; }
-        .offer-card .inc li { margin-bottom: 10px; display: flex; gap: 10px; }
-        .offer-card .inc i { color: var(--accent); }
-        
-        .old-p { font-size: 20px; text-decoration: line-through; opacity: 0.5; margin-bottom: 5px; display: block; }
-        .new-p { font-size: 72px; font-weight: 800; color: white; line-height: 1; }
-        .inst { font-size: 28px; color: var(--accent); font-weight: 700; margin-bottom: 30px; }
-        .vagas { background: var(--danger); display: inline-block; padding: 5px 12px; border-radius: 4px; font-size: 12px; font-weight: 800; margin-bottom: 25px; }
-
-        /* STICKY */
-        .sticky { position: fixed; bottom: 0; left: 0; right: 0; padding: 15px; background: rgba(255,255,255,0.9); backdrop-filter: blur(8px); z-index: 1000; transform: translateY(100%); transition: 0.4s; display: flex; justify-content: center; }
-        .sticky.active { transform: translateY(0); }
-
-        /* REVEAL */
-        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease; }
+        /* REVEAL ANIMATION */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* FOOTER */
-        footer { background: #0f0f0f; color: #555; padding: 60px 0; text-align: center; font-size: 12px; }
+        /* SECTION 1: TOP BAR */
+        .top-urgency { background: var(--danger); color: var(--white); padding: 12px 0; text-align: center; position: sticky; top: 0; z-index: 1000; }
+        .top-urgency p { font-size: 13px; font-weight: 700; letter-spacing: 1px; }
+        .countdown { font-size: 20px; font-weight: 800; display: inline-block; margin-left: 10px; font-variant-numeric: tabular-nums; }
 
-        @media (max-width: 768px) {
-            .hero-inner { flex-direction: column; text-align: center; }
-            .hero-content { text-align: center; }
-            .hero .sub { border-left: none; padding-left: 0; }
-            .auth-flex { flex-direction: column-reverse; }
+        /* SECTION 2: HERO */
+        .hero { padding: 40px 0 80px; }
+        .hero-flex { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
+        .hero-content { flex: 1; min-width: 320px; }
+        .hero-img { flex: 0.8; min-width: 320px; }
+        .hero-img img { width: 100%; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); transition: transform 0.3s ease; }
+        .hero-img img:hover { transform: scale(1.03); }
+
+        .hero h1 { font-size: clamp(32px, 5vw, 52px); margin-bottom: 24px; color: var(--brown-dark); }
+        .hero .subheadline { font-size: 18px; color: var(--brown-mid); margin-bottom: 35px; font-weight: 500; }
+        
+        .cta-btn {
+            display: inline-block; background: var(--gold); color: var(--brown-dark); padding: 20px 32px;
+            border-radius: 8px; text-decoration: none; font-weight: 800; font-size: 16px;
+            text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 137, 26, 0.3); animation: pulse 2s infinite;
+            text-align: center; width: 100%;
+        }
+        @media (min-width: 480px) { .cta-btn { width: auto; } }
+        .cta-btn:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(212, 137, 26, 0.4); }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(212, 137, 26, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(212, 137, 26, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 137, 26, 0); }
+        }
+
+        .badges-row { display: flex; gap: 20px; margin-top: 30px; flex-wrap: wrap; opacity: 0.8; }
+        .badge-item { font-size: 12px; font-weight: 700; color: var(--brown-mid); display: flex; align-items: center; gap: 8px; }
+        .badge-item i { color: var(--gold); }
+
+        /* SECTION 3: PAIN POINTS */
+        .pain { 
+            position: relative; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1583394293214-f5f35f73e51a?w=800');
+            background-size: cover; background-position: center; color: var(--white); text-align: center;
+        }
+        .pain h2 { margin-bottom: 50px; color: var(--gold-light); }
+        .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .pain-card { background: rgba(255,255,255,0.1); backdrop-filter: blur(5px); padding: 40px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.2); }
+        .pain-card i { font-size: 40px; color: var(--gold-light); margin-bottom: 20px; }
+        .pain-card h3 { margin-bottom: 15px; font-size: 24px; }
+        .transition-text { margin-top: 50px; font-size: 22px; font-style: italic; font-weight: 600; color: var(--gold-light); }
+
+        /* SECTION 4: ABOUT */
+        .about { background: var(--white); }
+        .about-flex { display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
+        .about-img { flex: 1; min-width: 320px; }
+        .about-img img { width: 100%; border-radius: 12px; box-shadow: -20px 20px 0 var(--gold); }
+        .about-content { flex: 1.2; min-width: 320px; }
+        .about-content h2 { margin-bottom: 25px; font-size: 36px; }
+        .about-content p { margin-bottom: 20px; font-size: 17px; color: var(--brown-mid); }
+        .credential-badges { display: flex; gap: 15px; margin-top: 30px; flex-wrap: wrap; }
+        .cred-badge { background: var(--cream); padding: 10px 15px; border-radius: 8px; font-size: 13px; font-weight: 700; color: var(--gold); border: 1px solid var(--gold-light); }
+
+        /* SECTION 5: LEARN GRID */
+        .learn-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 50px; }
+        .learn-item img { width: 100%; border-radius: 12px; height: 250px; object-fit: cover; margin-bottom: 15px; transition: transform 0.3s ease; }
+        .learn-item img:hover { transform: scale(1.03); }
+        .checklist-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; }
+        .check-item { display: flex; align-items: center; gap: 10px; font-weight: 600; }
+        .check-item i { color: var(--green); }
+
+        /* SECTION 6: FOR WHOM */
+        .for-whom-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .whom-card { background: var(--white); padding: 40px; border-radius: 12px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        .whom-card span { font-size: 50px; display: block; margin-bottom: 20px; }
+        .whom-card h4 { font-size: 18px; }
+
+        /* SECTION 8: BONUSES */
+        .bonus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .bonus-card { background: var(--white); border: 2px dashed var(--gold); padding: 40px; border-radius: 12px; position: relative; text-align: center; }
+        .bonus-card h4 { color: var(--gold); margin-bottom: 10px; }
+        .bonus-card p { font-size: 14px; opacity: 0.8; margin-bottom: 15px; }
+        .bonus-val { font-size: 12px; font-weight: 700; color: var(--danger); text-transform: uppercase; }
+        .total-value { margin-top: 50px; background: var(--brown-dark); color: var(--gold-light); padding: 30px; border-radius: 12px; display: inline-block; font-weight: 800; font-size: 20px; }
+
+        /* SECTION 9: TESTIMONIALS */
+        .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .test-card { background: var(--white); padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        .test-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+        .test-header img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; }
+        .stars { color: #f1c40f; margin-bottom: 15px; font-size: 14px; }
+        .test-text { font-style: italic; font-size: 15px; color: var(--brown-mid); margin-bottom: 15px; }
+        .test-name { font-weight: 700; font-size: 14px; }
+
+        /* SECTION 10: URGENCY BAR */
+        .urgency-section { text-align: center; background: var(--white); }
+        .progress-container { width: 100%; max-width: 600px; background: #eee; height: 16px; border-radius: 20px; margin: 25px auto; overflow: hidden; }
+        .progress-bar { width: 0%; height: 100%; background: var(--gold); border-radius: 20px; transition: width 2s ease-in-out; }
+
+        /* SECTION 11: OFFER */
+        .offer { background: var(--brown-dark); color: var(--white); text-align: center; }
+        .offer h2 { color: var(--gold-light); margin-bottom: 40px; }
+        .offer-box { max-width: 600px; margin: 0 auto; background: rgba(255,255,255,0.05); padding: 50px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.1); }
+        .price-old { font-size: 20px; text-decoration: line-through; opacity: 0.6; display: block; margin-bottom: 10px; }
+        .price-new { font-size: 56px; font-weight: 800; color: var(--gold-light); display: block; line-height: 1; }
+        .price-inst { font-size: 24px; font-weight: 700; margin: 15px 0 35px; }
+        .trust-micro { font-size: 13px; opacity: 0.7; margin-top: 20px; display: block; }
+        .trust-icons { display: flex; justify-content: center; gap: 20px; margin-top: 30px; opacity: 0.5; font-size: 24px; }
+
+        /* SECTION 12: GUARANTEE */
+        .guarantee { 
+            position: relative; background: linear-gradient(rgba(253,248,240,0.9), rgba(253,248,240,0.9)), url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800');
+            background-size: cover; background-position: center; text-align: center;
+        }
+        .guarantee-badge { max-width: 800px; margin: 0 auto; border: 4px double var(--gold); padding: 50px; border-radius: 20px; background: rgba(255,255,255,0.5); }
+        .risco-zero { font-size: 14px; font-weight: 900; color: var(--gold); text-transform: uppercase; letter-spacing: 3px; display: block; margin-top: 20px; }
+
+        /* SECTION 13: FAQ */
+        .faq { background: var(--white); }
+        .faq-item { border-bottom: 1px solid var(--border); overflow: hidden; }
+        .faq-question { padding: 25px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 18px; }
+        .faq-question::after { content: '+'; font-size: 24px; color: var(--gold); transition: transform 0.3s; }
+        .faq-item.active .faq-question::after { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; transition: max-height 0.4s ease-out; color: var(--brown-mid); font-size: 16px; }
+        .faq-item.active .faq-answer { max-height: 200px; padding-bottom: 25px; }
+
+        /* STICKY CTA */
+        .sticky-cta { 
+            position: fixed; bottom: 30px; right: 30px; z-index: 999;
+            transform: translateX(200px); transition: transform 0.5s ease;
+        }
+        .sticky-cta.visible { transform: translateX(0); }
+        .sticky-btn { 
+            background: var(--gold); color: var(--brown-dark); padding: 15px 25px; 
+            border-radius: 50px; text-decoration: none; font-weight: 800; font-size: 14px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2); text-transform: uppercase;
+        }
+
+        /* FOOTER */
+        footer { background: var(--brown-dark); color: #888; padding: 60px 0; text-align: center; font-size: 13px; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #888; text-decoration: none; margin: 0 15px; }
+
+        @media (max-width: 480px) {
+            section { padding: 40px 0; }
+            h1 { font-size: 32px; }
+            .hero-flex { text-align: center; }
+            .badge-item { justify-content: center; }
+            .offer-box { padding: 30px 20px; }
+            .price-new { font-size: 44px; }
+            .guarantee-badge { padding: 30px 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="top-timer">
-        ⚠️ PROMOÇÃO VÁLIDA PARA OS PRÓXIMOS 17 CLIENTES: <span id="timer">15:00</span>
+    <!-- SECTION 1: TOP BAR -->
+    <div class="top-urgency">
+        <div class="container">
+            <p>⚠️ VAGAS LIMITADAS PARA ESTA TURMA — OFERTA EXPIRA EM: <span class="countdown" id="timer">15:00</span></p>
+        </div>
     </div>
 
     <main>
-        <!-- HERO -->
+        <!-- SECTION 2: HERO -->
         <section class="hero">
-            <div class="container hero-inner">
+            <div class="container hero-flex">
                 <div class="hero-content">
-                    <span class="badge">SISTEMA ANTI-ESFARELAMENTO 1.0</span>
-                    <h1>Aprenda a Fazer Pães Sem Glúten Fofinhos, Saborosos e Lucrativos Mesmo Sendo Iniciante</h1>
-                    <p class="sub">Mais de 200 receitas testadas passo a passo para quem quer saúde, praticidade e até renda extra com pães artesanais que não parecem sem glúten.</p>
-                    <a href="#oferta" class="main-cta">SIM! QUERO ACESSO IMEDIATO COM DESCONTO</a>
+                    <h1>Massas sem glúten que não esfarelam com o Sistema de Liga Estrutural em 3 passos.</h1>
+                    <p class="subheadline">Aprenda a técnica de confeitaria inclusiva para criar bolos e massas com a mesma textura e sabor do trigo tradicional — mesmo se você nunca cozinhou sem glúten antes.</p>
+                    <a href="#oferta" class="cta-btn">QUERO MEU ACESSO AO PROTOCOLO AGORA →</a>
+                    <div class="badges-row">
+                        <div class="badge-item"><i class="fas fa-users"></i> +1.500 ALUNAS ATIVAS</div>
+                        <div class="badge-item"><i class="fas fa-leaf"></i> 100% SEM GLÚTEN / SEM LEITE</div>
+                        <div class="badge-item"><i class="fas fa-star"></i> ⭐ 4.9/5 AVALIAÇÃO</div>
+                    </div>
                 </div>
                 <div class="hero-img">
-                    <img src="banner_hero.png" alt="Pães Sem Glúten Artesanais">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800" alt="Pão Artesanal Sem Glúten">
                 </div>
             </div>
         </section>
 
-        <!-- PROBLEM -->
-        <section class="pain reveal">
+        <!-- SECTION 3: PAIN POINTS -->
+        <section class="pain">
             <div class="container">
-                <h2>Você não aguenta mais isso?</h2>
+                <h2 class="reveal">Por que suas massas continuam esfarelando?</h2>
                 <div class="pain-grid">
-                    <div class="pain-card">
+                    <div class="pain-card reveal">
+                        <i class="fas fa-cubes"></i>
+                        <h3>Textura de Areia</h3>
+                        <p>O erro de usar farinhas sem a liga necessária gera aquela sensação desagradável na boca.</p>
+                    </div>
+                    <div class="pain-card reveal">
+                        <i class="fas fa-level-down-alt"></i>
+                        <h3>Receitas sem Estrutura</h3>
+                        <p>Bolos que desabam ao rechear porque a massa não tem a elasticidade correta.</p>
+                    </div>
+                    <div class="pain-card reveal">
                         <i class="fas fa-trash-alt"></i>
-                        <h4>Receitas que vão para o lixo</h4>
-                        <p>Cansada de comprar farinhas caras e o pão sair duro como pedra ou com gosto de areia?</p>
+                        <h3>Desperdício de Ingredientes</h3>
+                        <p>Jogar quilos de farinhas caras no lixo testando receitas de YouTube que nunca funcionam.</p>
                     </div>
-                    <div class="pain-card">
-                        <i class="fas fa-tired"></i>
-                        <h4>Frustração e Desânimo</h4>
-                        <p>Seguir receitas da internet que nunca dão certo e sentir que você nunca vai aprender.</p>
-                    </div>
-                    <div class="pain-card">
-                        <i class="fas fa-hospital-user"></i>
-                        <h4>Saúde Comprometida</h4>
-                        <p>Viver com inchaço, enxaqueca e a sensação de que comer se tornou um perigo.</p>
+                </div>
+                <p class="transition-text reveal">Você não tem um problema de receita. Você tem um problema de técnica. E eu vou te resolver isso.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 4: ABOUT -->
+        <section class="about reveal">
+            <div class="container about-flex">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=800" alt="Especialista Chef">
+                </div>
+                <div class="about-content">
+                    <h2>Quem vai te ensinar isso?</h2>
+                    <p>Olá, eu sou a mente por trás do **Protocolo Massas de Ouro**. Como especialista em confeitaria inclusiva brasileira, dediquei anos de estudo para resolver o maior pesadelo de quem cozinha sem glúten: a textura.</p>
+                    <p>Depois de centenas de testes frustrados e muito ingrediente jogado fora, desenvolvi o **Sistema de Liga Estrutural**, um método único que replica a elasticidade do glúten usando apenas ingredientes naturais.</p>
+                    <p>Hoje, já ajudei mais de **1.500 mulheres** a resgatarem o prazer de comer um pão fofinho ou um bolo estruturado sem medo da intolerância.</p>
+                    <div class="credential-badges">
+                        <div class="cred-badge">10+ ANOS DE EXPERIÊNCIA</div>
+                        <div class="cred-badge">+1.500 ALUNAS</div>
+                        <div class="cred-badge">MÉTODO EXCLUSIVO</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- AUTHORITY -->
-        <section class="authority reveal">
-            <div class="container auth-flex">
-                <div class="auth-img">
-                    <img src="https://deliciassemgluten.online/wp-content/uploads/2023/11/carla-ramos.jpg" alt="Chef Carla Ramos">
-                </div>
-                <div class="auth-text">
-                    <h2>"Eu precisei aprender para salvar a mesa da minha filha."</h2>
-                    <p>Olá, eu sou a **Chef Carla Ramos**. Minha história na panificação inclusiva começou pelo amor à minha filha Sofia, quando ela foi diagnosticada com intolerância.</p>
-                    <p>Depois de anos testando receitas ruins e desperdiçando ingredientes, eu reuni as melhores técnicas que **realmente funcionam**. Eu criei o que eu gostaria de ter tido no começo.</p>
-                    <p>Meu objetivo é que você nunca mais jogue dinheiro fora e que sua família sinta prazer em comer novamente.</p>
-                    <a href="#oferta" class="main-cta" style="padding: 15px 30px; font-size: 16px;">CONHECER A METODOLOGIA</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- MOCKUP SECTION -->
-        <section style="background: white;" class="reveal">
-            <div class="container" style="text-align: center;">
-                <h2 style="margin-bottom: 40px;">O que você vai dominar no Aplicativo:</h2>
-                <img src="mockup_v3.png" alt="Mockup Premium" style="max-width: 100%; border-radius: 20px;">
-                <div class="grid-3" style="margin-top: 50px;">
-                    <div class="feature-card"><i class="fas fa-bread-slice"></i><h3>Pães Tradicionais</h3><p>Francês, Batata, Mandioquinha e mais.</p></div>
-                    <div class="feature-card"><i class="fas fa-blender"></i><h3>Panificadora</h3><p>Receitas automáticas perfeitas.</p></div>
-                    <div class="feature-card"><i class="fas fa-pizza-slice"></i><h3>Massas e Bolos</h3><p>Pizzas, Nhoques e Brownies exclusivos.</p></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- BONUSES -->
-        <section class="bonuses reveal">
+        <!-- SECTION 5: WHAT YOU WILL LEARN -->
+        <section class="reveal">
             <div class="container">
-                <h2 style="text-align: center; margin-bottom: 50px;">Bônus que valem mais que o produto:</h2>
-                <div class="bonus-grid">
-                    <div class="bonus-card"><span class="bonus-tag">GRÁTIS HOJE</span><h3>Guia de Farinhas</h3><p class="val">Valor: R$ 67</p></div>
-                    <div class="bonus-card"><span class="bonus-tag">GRÁTIS HOJE</span><h3>Receitas Low Carb</h3><p class="val">Valor: R$ 97</p></div>
-                    <div class="bonus-card"><span class="bonus-tag">GRÁTIS HOJE</span><h3>Como Vender e Lucrar</h3><p class="val">Valor: R$ 147</p></div>
-                    <div class="bonus-card"><span class="bonus-tag">GRÁTIS HOJE</span><h3>Lista Econômica</h3><p class="val">Valor: R$ 27</p></div>
-                    <div class="bonus-card"><span class="bonus-tag">GRÁTIS HOJE</span><h3>Receitas Air Fryer</h3><p class="val">Valor: R$ 47</p></div>
-                    <div class="bonus-card"><span class="bonus-tag">GRÁTIS HOJE</span><h3>Certificado Premium</h3><p class="val">Valor: INESTIMÁVEL</p></div>
+                <h2 style="text-align: center; margin-bottom: 50px;">O que você vai aprender no Protocolo?</h2>
+                <div class="learn-grid">
+                    <div class="learn-item"><img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc7c?w=800" alt="Pães Artesanais"></div>
+                    <div class="learn-item"><img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=800" alt="Bolos Estruturados"></div>
+                    <div class="learn-item"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800" alt="Pizzas e Massas"></div>
+                </div>
+                <div class="checklist-grid">
+                    <div class="check-item"><i class="fas fa-check-circle"></i> Sistema de Liga Estrutural</div>
+                    <div class="check-item"><i class="fas fa-check-circle"></i> Mix de farinhas caseiro</div>
+                    <div class="check-item"><i class="fas fa-check-circle"></i> Bolos que não desabam</div>
+                    <div class="check-item"><i class="fas fa-check-circle"></i> Pães fofinhos e crocantes</div>
+                    <div class="check-item"><i class="fas fa-check-circle"></i> Massas para pizza e lasanha</div>
+                    <div class="check-item"><i class="fas fa-check-circle"></i> Sobremesas profissionais</div>
+                    <div class="check-item"><i class="fas fa-check-circle"></i> Substitutos de leite e ovos</div>
+                    <div class="check-item"><i class="fas fa-check-circle"></i> Criar seus próprios mixes</div>
                 </div>
             </div>
         </section>
 
-        <!-- PROOF -->
-        <section class="reveal" style="background: var(--bg);">
-            <div class="container" style="text-align: center;">
-                <h2>Quem aplica, aprova:</h2>
-                <img src="social_proof.png" alt="Depoimentos WhatsApp" style="max-width: 100%; margin-top: 40px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
+        <!-- SECTION 6: FOR WHOM -->
+        <section class="reveal" style="background: var(--white);">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 50px;">Para quem é o Protocolo Massas de Ouro?</h2>
+                <div class="for-whom-grid">
+                    <div class="whom-card"><span>🌾</span><h4>Celíacas e intolerantes ao glúten</h4></div>
+                    <div class="whom-card"><span>🥛</span><h4>Mulheres com restrição a leite (APLV)</h4></div>
+                    <div class="whom-card"><span>⏰</span><h4>Quem não tem tempo mas quer resultados</h4></div>
+                    <div class="whom-card"><span>💰</span><h4>Quem quer vender doces e pães sem glúten</h4></div>
+                </div>
             </div>
         </section>
 
-        <!-- OFFER -->
+        <!-- SECTION 7 & 8: WHAT'S INCLUDED & BONUSES -->
+        <section class="reveal">
+            <div class="container">
+                <div style="display: flex; gap: 40px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 320px;">
+                        <h2 style="margin-bottom: 30px;">Tudo que você recebe hoje:</h2>
+                        <ul style="list-style: none;">
+                            <li class="check-item" style="margin-bottom: 15px;"><i class="fas fa-check"></i> eBook Protocolo Massas de Ouro</li>
+                            <li class="check-item" style="margin-bottom: 15px;"><i class="fas fa-check"></i> Masterclass em vídeo exclusiva</li>
+                            <li class="check-item" style="margin-bottom: 15px;"><i class="fas fa-check"></i> Guia de Recheios Sem Leite</li>
+                            <li class="check-item" style="margin-bottom: 15px;"><i class="fas fa-check"></i> Acesso imediato e Vitalício</li>
+                            <li class="check-item" style="margin-bottom: 15px;"><i class="fas fa-check"></i> Garantia de 7 dias</li>
+                        </ul>
+                    </div>
+                    <div style="flex: 1; min-width: 320px;">
+                        <h2 style="margin-bottom: 30px;">Bônus Exclusivos:</h2>
+                        <div class="bonus-grid" style="grid-template-columns: 1fr;">
+                            <div class="bonus-card">
+                                <span class="bonus-tag">GRÁTIS HOJE</span>
+                                <h4>Guia de Substituição de Ingredientes</h4>
+                                <span class="bonus-val">Valor: R$47,00</span>
+                            </div>
+                            <div class="bonus-card">
+                                <span class="bonus-tag">GRÁTIS HOJE</span>
+                                <h4>Receitas de Festas Sem Glúten e Sem Leite</h4>
+                                <span class="bonus-val">Valor: R$57,00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 50px;">
+                    <div class="total-value">Valor total dos bônus: ~~R$141,00~~ → GRÁTIS HOJE</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 9: TESTIMONIALS -->
+        <section class="reveal" style="background: var(--white);">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 50px;">O que nossas alunas estão dizendo:</h2>
+                <div class="test-grid">
+                    <div class="test-card">
+                        <div class="test-header">
+                            <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=200" alt="Aluna">
+                            <div><div class="test-name">Maria S., São Paulo</div><div class="stars">★★★★★</div></div>
+                        </div>
+                        <p class="test-text">"Nunca pensei que voltaria a comer um pão francês fofinho. O sistema de liga realmente funciona, as receitas não esfarelam mais!"</p>
+                    </div>
+                    <div class="test-card">
+                        <div class="test-header">
+                            <img src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?w=200" alt="Aluna">
+                            <div><div class="test-name">Juliana P., Curitiba</div><div class="stars">★★★★★</div></div>
+                        </div>
+                        <p class="test-text">"Os bolos ficam maravilhosos e estruturados. Minha família nem percebe que é sem glúten e sem leite. Vale cada centavo!"</p>
+                    </div>
+                    <div class="test-card">
+                        <div class="test-header">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200" alt="Aluna">
+                            <div><div class="test-name">Carla M., Belo Horizonte</div><div class="stars">★★★★★</div></div>
+                        </div>
+                        <p class="test-text">"O suporte é incrível e as aulas são muito claras. Consegui fazer a minha primeira pizza sem glúten de verdade ontem!"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 10: URGENCY -->
+        <section class="reveal urgency-section">
+            <div class="container">
+                <h2 style="color: var(--danger);">⚠️ ATENÇÃO: VAGAS LIMITADAS!</h2>
+                <p style="font-weight: 700; margin-top: 10px;">Liberamos apenas 10 acessos promocionais por dia</p>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <p><strong>87% das vagas preenchidas.</strong> Após encerrar as vagas o valor volta para R$147,00</p>
+                <div style="margin-top: 30px;">
+                    <a href="#oferta" class="cta-btn" style="max-width: 400px;">QUERO GARANTIR MINHA VAGA AGORA</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 11: OFFER -->
         <section id="oferta" class="offer reveal">
             <div class="container">
-                <div class="offer-card">
-                    <span class="vagas">PROMOÇÃO VÁLIDA PARA OS PRÓXIMOS 17 CLIENTES</span>
-                    <h2>Oferta Única e Exclusiva</h2>
-                    <ul class="inc">
-                        <li><i class="fas fa-check"></i> Aplicativo Premium +200 Receitas</li>
-                        <li><i class="fas fa-check"></i> 06 Bônus Exclusivos de Elite</li>
-                        <li><i class="fas fa-check"></i> Suporte com a Equipe da Chef</li>
-                        <li><i class="fas fa-check"></i> Comunidade Privada WhatsApp</li>
-                        <li><i class="fas fa-check"></i> Acesso Vitalício + Certificado</li>
+                <div class="offer-box">
+                    <span style="color: var(--gold-light); font-weight: 800; text-transform: uppercase; letter-spacing: 2px;">OFERTA ESPECIAL + 3 BÔNUS</span>
+                    <h2 style="margin: 20px 0;">Adquira o Protocolo Hoje</h2>
+                    <ul style="list-style: none; text-align: left; max-width: 350px; margin: 0 auto 30px;">
+                        <li>✅ eBook Protocolo Massas de Ouro</li>
+                        <li>✅ Masterclass em vídeo exclusiva</li>
+                        <li>✅ 03 Bônus Especiais (Grátis)</li>
+                        <li>✅ Acesso Vitalício + Suporte</li>
                     </ul>
-                    <span class="old-p">De R$ 197,00 por apenas</span>
-                    <span class="inst">12x de R$ 7,02</span>
-                    <span class="new-p">R$ 69,90</span>
-                    <p style="margin: 20px 0 30px; opacity: 0.6;">(Menos que um café por mês)</p>
-                    <a href="https://checkout.doppus.app/12573015" class="main-cta" style="width: 100%;">SIM! QUERO RECEBER TODAS AS RECEITAS AGORA</a>
-                    
-                    <div style="margin-top: 30px; opacity: 0.5;">
-                        <img src="https://deliciassemgluten.online/wp-content/uploads/2023/11/compra-segura.png" alt="Seguro" style="max-width: 250px;">
+                    <span class="price-old">De R$147,00 por</span>
+                    <span class="price-new">R$ 37,00</span>
+                    <p class="price-inst">ou 12x de R$ 3,38 no cartão</p>
+                    <a href="#" class="cta-btn" style="background: var(--gold-light);">COMPRAR AGORA COM SEGURANÇA →</a>
+                    <span class="trust-micro">🔒 Pagamento 100% seguro • Acesso imediato • Garantia de 7 dias</span>
+                    <div class="trust-icons">
+                        <i class="fas fa-lock"></i>
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fas fa-shield-alt"></i>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- GUARANTEE -->
-        <section class="reveal" style="text-align: center;">
+        <!-- SECTION 12: GUARANTEE -->
+        <section class="guarantee reveal">
             <div class="container">
-                <img src="https://deliciassemgluten.online/wp-content/uploads/2023/11/selo-garantia.png" alt="Selo" style="max-width: 130px; margin-bottom: 25px;">
-                <h2>Garantia Blindada de 7 Dias</h2>
-                <p style="max-width: 750px; margin: 0 auto; color: var(--text-light); font-weight: 500;">Você entra, testa as receitas, vê as aulas e se não for o melhor material que já comprou, eu devolvo 100% do seu dinheiro. Sem perguntas. O risco é meu.</p>
+                <div class="guarantee-badge">
+                    <h2>Garantia Incondicional de 7 Dias</h2>
+                    <p style="margin: 20px 0; font-size: 18px;">Se por qualquer motivo você não ficar satisfeita nos primeiros 7 dias, devolvemos 100% do seu investimento. Sem perguntas. Sem burocracia.</p>
+                    <span class="risco-zero">RISCO ZERO</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 13: FAQ -->
+        <section class="reveal faq">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 50px;">Dúvidas Frequentes</h2>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="faq-item">
+                        <div class="faq-question">Nunca fiz nada sem glúten antes. Consigo seguir?</div>
+                        <div class="faq-answer">Sim! O método foi criado especificamente para iniciantes. Cada passo é explicado de forma simples e visual para você não errar.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Preciso de batedeira profissional?</div>
+                        <div class="faq-answer">Não. O protocolo foi desenvolvido para ser executado com utensílios domésticos simples que você já tem na sua cozinha.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">As receitas servem para quem não pode comer leite?</div>
+                        <div class="faq-answer">Sim, todas as receitas são 100% sem leite e derivados, ideais para alérgicos (APLV) e intolerantes à lactose.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Como recebo o acesso?</div>
+                        <div class="faq-answer">O acesso é enviado imediatamente para o seu e-mail cadastrado logo após a confirmação do pagamento.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">O acesso tem prazo para expirar?</div>
+                        <div class="faq-answer">Não. Seu acesso é vitalício. Você pode baixar os materiais e assistir às aulas quando e quantas vezes quiser.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">E se eu não gostar?</div>
+                        <div class="faq-answer">Você tem 7 dias de garantia total. Se não gostar, basta nos enviar um e-mail e devolvemos 100% do valor pago.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 14: FINAL CTA -->
+        <section class="reveal" style="text-align: center; background: var(--white);">
+            <div class="container">
+                <h2 style="margin-bottom: 30px;">Sua mesa nunca mais será a mesma.</h2>
+                <p style="font-size: 20px; max-width: 700px; margin: 0 auto 40px; color: var(--brown-mid);">A oportunidade de resgatar o sabor e a saúde da sua família está a um clique de distância. Garanta sua vaga promocional agora.</p>
+                <a href="#oferta" class="cta-btn" style="max-width: 500px;">SIM, EU QUERO MINHAS MASSAS PERFEITAS AGORA →</a>
             </div>
         </section>
     </main>
 
-    <div class="sticky" id="sticky">
-        <a href="#oferta" class="main-cta" style="width: 100%; text-align: center;">QUERO RECEBER AS RECEITAS AGORA</a>
+    <div class="sticky-cta" id="sticky">
+        <a href="#oferta" class="sticky-btn">COMPRAR AGORA</a>
     </div>
 
     <footer>
         <div class="container">
-            <p>© 2026 DKN Marketing Digital - Todos os direitos reservados.</p>
-            <p style="margin-top: 15px; opacity: 0.6;">Aviso: Este site não é do Facebook. Resultados podem variar.</p>
+            <div class="footer-links">
+                <a href="#">Termos de Uso</a>
+                <a href="#">Privacidade</a>
+                <a href="#">Aviso Legal</a>
+            </div>
+            <p>© Protocolo Massas de Ouro — Todos os direitos reservados.</p>
+            <p style="margin-top: 20px; font-size: 11px; opacity: 0.5;">Este site não é afiliado ao Facebook. Resultados podem variar conforme a aplicação da técnica.</p>
         </div>
     </footer>
 
     <script>
-        // TIMER 15:00
-        function timer(d, disp) {
-            var t = d, m, s;
-            setInterval(() => {
-                m = parseInt(t / 60, 10); s = parseInt(t % 60, 10);
-                disp.textContent = (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
-                if (--t < 0) t = d;
+        // COUNTDOWN TIMER
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                display.textContent = minutes + ":" + seconds;
+                if (--timer < 0) { timer = duration; }
             }, 1000);
         }
-        window.onload = () => timer(60 * 15, document.querySelector('#timer'));
-
-        // REVEAL
-        const obs = new IntersectionObserver((es) => {
-            es.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-        // STICKY
-        window.onscroll = () => {
-            document.getElementById('sticky').classList.toggle('active', window.scrollY > 800);
+        window.onload = function () {
+            startTimer(60 * 15, document.querySelector('#timer'));
+            // Progress Bar Animation
+            setTimeout(() => {
+                document.getElementById('progressBar').style.width = '87%';
+            }, 500);
         };
 
-        // FAQ simple toggle
-        document.querySelectorAll('.faq-q').forEach(q => {
-            q.onclick = () => q.parentElement.classList.toggle('active');
+        // SCROLL REVEAL
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // STICKY CTA
+        const sticky = document.getElementById('sticky');
+        window.onscroll = () => {
+            if (window.pageYOffset > 800) {
+                sticky.classList.add('visible');
+            } else {
+                sticky.classList.remove('visible');
+            }
+        };
+
+        // FAQ ACCORDION
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.querySelector('.faq-question').onclick = () => {
+                item.classList.toggle('active');
+            };
         });
     </script>
+
 </body>
 </html>
