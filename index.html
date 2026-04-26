@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protocolo Pães de Ouro — O Fim das Receitas que Esfarelam</title>
+    <title>Aplicativo Pães Sem Glúten Premium — Chef Carla Ramos</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -16,221 +16,225 @@
             --text-dark: #1A0F08;
             --text-light: #5C4033;
             --accent: #D4891A;
-            --cta: #2D5A27; /* Verde oliva profundo - Alta confiança */
+            --cta: #2D5A27;
             --danger: #9E2A2B;
             --white: #FFFFFF;
+            --border: #E8E0D8;
         }
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text-dark); line-height: 1.6; }
         
-        .container { width: 100%; max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        .container { width: 100%; max-width: 1050px; margin: 0 auto; padding: 0 25px; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 800; line-height: 1.1; }
 
-        /* TOP BAR TIMER */
-        .top-timer { background: var(--danger); color: white; text-align: center; padding: 12px 0; font-weight: 800; font-size: 14px; position: sticky; top: 0; z-index: 1000; letter-spacing: 1px; }
+        /* HEADER TIMER */
+        .top-timer { background: var(--danger); color: white; text-align: center; padding: 10px 0; font-weight: 800; font-size: 13px; position: sticky; top: 0; z-index: 1000; letter-spacing: 0.5px; }
 
-        /* HERO */
-        .hero { padding: 60px 0 40px; text-align: center; }
-        .hero .pre-title { color: var(--accent); font-weight: 700; font-size: 14px; text-transform: uppercase; margin-bottom: 15px; display: block; letter-spacing: 2px; }
-        .hero h1 { font-size: clamp(32px, 8vw, 54px); margin-bottom: 25px; color: var(--text-dark); }
-        .hero .sub { font-size: 18px; color: var(--text-light); max-width: 800px; margin: 0 auto 35px; font-weight: 500; }
+        /* HERO SECTION */
+        .hero { padding: 60px 0; background: linear-gradient(rgba(253,248,240,0.8), rgba(253,248,240,0.8)), url('hero_bg.jpg') center/cover; }
+        .hero-inner { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
+        .hero-content { flex: 1.2; min-width: 320px; text-align: left; }
+        .hero-img { flex: 0.8; min-width: 320px; }
+        .hero-img img { width: 100%; border-radius: 20px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); border: 8px solid white; }
+
+        .hero .badge { background: var(--white); color: var(--accent); padding: 6px 12px; border-radius: 5px; font-weight: 800; font-size: 12px; margin-bottom: 15px; display: inline-block; border: 1px solid var(--border); }
+        .hero h1 { font-size: clamp(34px, 5vw, 52px); margin-bottom: 20px; }
+        .hero .sub { font-size: 18px; color: var(--text-light); margin-bottom: 35px; font-weight: 500; border-left: 4px solid var(--accent); padding-left: 20px; }
         
         .main-cta { 
-            display: inline-block; background: var(--cta); color: white; padding: 22px 50px; 
-            border-radius: 15px; text-decoration: none; font-weight: 800; font-size: 20px;
+            display: inline-block; background: var(--cta); color: white; padding: 22px 45px; 
+            border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 19px;
             box-shadow: 0 15px 35px rgba(45, 90, 39, 0.3); transition: 0.3s;
-            animation: pulse-green 2s infinite; text-transform: uppercase;
+            animation: pulse-green 2s infinite; text-transform: uppercase; text-align: center;
         }
         @keyframes pulse-green {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(45, 90, 39, 0.7); }
-            70% { transform: scale(1.02); box-shadow: 0 0 0 20px rgba(45, 90, 39, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(45, 90, 39, 0); }
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
         }
 
-        /* SECTION PROBLEM */
-        .problem { background: var(--white); padding: 80px 0; }
-        .problem h2 { text-align: center; margin-bottom: 50px; }
-        .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .problem-item { display: flex; gap: 20px; align-items: flex-start; }
-        .problem-item i { color: var(--danger); font-size: 24px; padding-top: 5px; }
-        .problem-item h4 { font-size: 20px; margin-bottom: 8px; }
+        /* PAIN SECTION */
+        .pain { background: var(--white); padding: 90px 0; }
+        .pain h2 { text-align: center; margin-bottom: 60px; }
+        .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .pain-card { background: var(--bg); padding: 40px; border-radius: 20px; position: relative; border: 1px solid #f1f1f1; }
+        .pain-card i { position: absolute; top: -15px; right: 20px; font-size: 40px; color: var(--danger); opacity: 0.2; }
+        .pain-card h4 { font-size: 20px; margin-bottom: 12px; color: var(--danger); }
 
-        /* ABOUT */
-        .about { padding: 100px 0; background: var(--bg); }
-        .about-flex { display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
-        .about-img { flex: 1; min-width: 300px; }
-        .about-img img { width: 100%; border-radius: 30px; box-shadow: -20px 20px 0 var(--accent); }
-        .about-text { flex: 1.2; }
-        .about-text h2 { margin-bottom: 25px; font-size: 38px; }
-        .about-text p { margin-bottom: 20px; font-size: 17px; color: var(--text-light); }
+        /* AUTHORITY */
+        .authority { padding: 100px 0; background: var(--bg); }
+        .auth-flex { display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
+        .auth-img { flex: 1; }
+        .auth-img img { width: 100%; border-radius: 30px; box-shadow: 20px 20px 0 var(--accent); }
+        .auth-text { flex: 1.3; }
+        .auth-text h2 { margin-bottom: 30px; }
+        .auth-text p { margin-bottom: 20px; font-size: 17px; }
 
-        /* WHAT'S INCLUDED */
-        .included { padding: 100px 0; background: var(--white); }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .feature-card { padding: 40px; border-radius: 25px; border: 1px solid #eee; transition: 0.3s; background: var(--bg); }
-        .feature-card i { font-size: 40px; color: var(--accent); margin-bottom: 20px; }
-        .feature-card h3 { margin-bottom: 15px; }
+        /* BONUSES */
+        .bonuses { padding: 90px 0; background: var(--white); }
+        .bonus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .bonus-card { background: var(--white); border: 2px dashed var(--accent); padding: 30px; border-radius: 15px; position: relative; }
+        .bonus-tag { position: absolute; top: -12px; left: 20px; background: var(--danger); color: white; padding: 4px 10px; font-size: 11px; font-weight: 800; border-radius: 4px; }
+        .bonus-card h3 { font-size: 18px; margin-bottom: 10px; color: var(--accent); }
+        .bonus-card .val { text-decoration: line-through; opacity: 0.4; font-size: 13px; }
 
-        /* PRICING */
-        .pricing { padding: 100px 0; text-align: center; }
-        .price-box { 
+        /* OFFER BOX */
+        .offer { padding: 100px 0; text-align: center; }
+        .offer-card { 
             background: var(--text-dark); color: white; padding: 60px 40px; 
-            border-radius: 40px; max-width: 650px; margin: 0 auto;
-            position: relative; overflow: hidden;
+            border-radius: 40px; max-width: 700px; margin: 0 auto; box-shadow: 0 40px 80px rgba(0,0,0,0.3);
         }
-        .price-box::before { content: ''; position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: var(--accent); transform: rotate(45deg); opacity: 0.2; }
-        .old-price { font-size: 22px; text-decoration: line-through; opacity: 0.5; margin-bottom: 10px; display: block; }
-        .new-price { font-size: 72px; font-weight: 800; line-height: 1; margin-bottom: 10px; color: var(--white); }
-        .installment { font-size: 28px; color: var(--accent); font-weight: 700; margin-bottom: 30px; }
-        .limited-tag { background: var(--danger); display: inline-block; padding: 6px 15px; border-radius: 5px; font-size: 13px; font-weight: 800; margin-bottom: 25px; }
+        .offer-card h2 { color: var(--accent); font-size: 38px; margin-bottom: 25px; }
+        .offer-card .inc { list-style: none; text-align: left; max-width: 400px; margin: 0 auto 30px; font-size: 15px; }
+        .offer-card .inc li { margin-bottom: 10px; display: flex; gap: 10px; }
+        .offer-card .inc i { color: var(--accent); }
+        
+        .old-p { font-size: 20px; text-decoration: line-through; opacity: 0.5; margin-bottom: 5px; display: block; }
+        .new-p { font-size: 72px; font-weight: 800; color: white; line-height: 1; }
+        .inst { font-size: 28px; color: var(--accent); font-weight: 700; margin-bottom: 30px; }
+        .vagas { background: var(--danger); display: inline-block; padding: 5px 12px; border-radius: 4px; font-size: 12px; font-weight: 800; margin-bottom: 25px; }
 
-        /* URGENCY PROGRESS */
-        .progress-box { max-width: 400px; margin: 20px auto; }
-        .progress-bg { background: #333; height: 10px; border-radius: 10px; margin: 10px 0; overflow: hidden; }
-        .progress-fill { width: 87%; height: 100%; background: var(--accent); border-radius: 10px; }
-
-        /* STICKY CTA */
-        .sticky-footer { 
-            position: fixed; bottom: 0; left: 0; right: 0; padding: 15px; 
-            background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); 
-            z-index: 999; display: flex; justify-content: center;
-            transform: translateY(100%); transition: 0.4s;
-        }
-        .sticky-footer.visible { transform: translateY(0); }
+        /* STICKY */
+        .sticky { position: fixed; bottom: 0; left: 0; right: 0; padding: 15px; background: rgba(255,255,255,0.9); backdrop-filter: blur(8px); z-index: 1000; transform: translateY(100%); transition: 0.4s; display: flex; justify-content: center; }
+        .sticky.active { transform: translateY(0); }
 
         /* REVEAL */
-        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* FAQ */
-        .faq-item { margin-bottom: 15px; border: 1px solid #eee; border-radius: 15px; background: white; }
-        .faq-q { padding: 20px 25px; cursor: pointer; font-weight: 700; display: flex; justify-content: space-between; align-items: center; }
-        .faq-a { padding: 0 25px; max-height: 0; overflow: hidden; transition: 0.3s; color: var(--text-light); }
-        .faq-item.active .faq-a { padding-bottom: 20px; max-height: 200px; }
+        /* FOOTER */
+        footer { background: #0f0f0f; color: #555; padding: 60px 0; text-align: center; font-size: 12px; }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 36px; }
-            .about-flex { flex-direction: column-reverse; }
-            .main-cta { width: 100%; font-size: 18px; padding: 18px 20px; }
+            .hero-inner { flex-direction: column; text-align: center; }
+            .hero-content { text-align: center; }
+            .hero .sub { border-left: none; padding-left: 0; }
+            .auth-flex { flex-direction: column-reverse; }
         }
     </style>
 </head>
 <body>
 
     <div class="top-timer">
-        ⚠️ ATENÇÃO: PREÇO PROMOCIONAL EXPIRA EM <span id="timer">15:00</span>
+        ⚠️ PROMOÇÃO VÁLIDA PARA OS PRÓXIMOS 17 CLIENTES: <span id="timer">15:00</span>
     </div>
 
     <main>
         <!-- HERO -->
         <section class="hero">
-            <div class="container">
-                <span class="pre-title">O FIM DAS RECEITAS QUE ESFARELAM</span>
-                <h1>Chega de comer pão com gosto de areia e textura de borracha.</h1>
-                <p class="sub">Descubra o método definitivo de 10 anos de prática da Chef Carla Ramos para ter pães fofinhos, macios e saborosos na sua mesa todos os dias (Mesmo sem usar Glúten).</p>
-                <a href="#oferta" class="main-cta">SIM! EU QUERO APRENDER AGORA</a>
-                
-                <div style="margin-top: 40px; opacity: 0.8; font-size: 13px; font-weight: 600;">
-                    <i class="fas fa-check-circle" style="color:var(--accent)"></i> +200 RECEITAS TESTADAS &nbsp;&nbsp; 
-                    <i class="fas fa-check-circle" style="color:var(--accent)"></i> +1.500 ALUNAS &nbsp;&nbsp; 
-                    <i class="fas fa-check-circle" style="color:var(--accent)"></i> ACESSO VITALÍCIO
+            <div class="container hero-inner">
+                <div class="hero-content">
+                    <span class="badge">SISTEMA ANTI-ESFARELAMENTO 1.0</span>
+                    <h1>Aprenda a Fazer Pães Sem Glúten Fofinhos, Saborosos e Lucrativos Mesmo Sendo Iniciante</h1>
+                    <p class="sub">Mais de 200 receitas testadas passo a passo para quem quer saúde, praticidade e até renda extra com pães artesanais que não parecem sem glúten.</p>
+                    <a href="#oferta" class="main-cta">SIM! QUERO ACESSO IMEDIATO COM DESCONTO</a>
+                </div>
+                <div class="hero-img">
+                    <img src="banner_hero.png" alt="Pães Sem Glúten Artesanais">
                 </div>
             </div>
         </section>
 
-        <!-- PROBLEMS -->
-        <section class="problem reveal">
+        <!-- PROBLEM -->
+        <section class="pain reveal">
             <div class="container">
-                <h2>Você se sente frustrada com isso?</h2>
-                <div class="problem-grid">
-                    <div class="problem-item">
-                        <i class="fas fa-times-circle"></i>
-                        <div>
-                            <h4>Receitas que viram pedra</h4>
-                            <p>Cansada de seguir vídeos na internet e o pão sair duro, seco ou quebrando no prato?</p>
-                        </div>
+                <h2>Você não aguenta mais isso?</h2>
+                <div class="pain-grid">
+                    <div class="pain-card">
+                        <i class="fas fa-trash-alt"></i>
+                        <h4>Receitas que vão para o lixo</h4>
+                        <p>Cansada de comprar farinhas caras e o pão sair duro como pedra ou com gosto de areia?</p>
                     </div>
-                    <div class="problem-item">
-                        <i class="fas fa-times-circle"></i>
-                        <div>
-                            <h4>Sintomas que não param</h4>
-                            <p>Inchaço, enxaquecas e desconforto que o glúten causa na sua saúde e na sua família.</p>
-                        </div>
+                    <div class="pain-card">
+                        <i class="fas fa-tired"></i>
+                        <h4>Frustração e Desânimo</h4>
+                        <p>Seguir receitas da internet que nunca dão certo e sentir que você nunca vai aprender.</p>
                     </div>
-                    <div class="problem-item">
-                        <i class="fas fa-times-circle"></i>
-                        <div>
-                            <h4>Ingredientes no lixo</h4>
-                            <p>Dói no bolso comprar farinhas caras e ver tudo indo para o lixo porque a receita não deu certo.</p>
-                        </div>
+                    <div class="pain-card">
+                        <i class="fas fa-hospital-user"></i>
+                        <h4>Saúde Comprometida</h4>
+                        <p>Viver com inchaço, enxaqueca e a sensação de que comer se tornou um perigo.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ABOUT -->
-        <section class="about reveal">
-            <div class="container">
-                <div class="about-flex">
-                    <div class="about-img">
-                        <img src="https://deliciassemgluten.online/wp-content/uploads/2023/11/carla-ramos.jpg" alt="Chef Carla Ramos">
-                    </div>
-                    <div class="about-text">
-                        <h2>De Mãe para Mãe: A história por trás do método</h2>
-                        <p>Eu sou a Carla Ramos, e minha jornada começou pela dor. Minha filha Sofia foi diagnosticada com intolerância ao glúten e eu me vi perdida.</p>
-                        <p>Eu não aceitava que ela tivesse que comer pães sem graça e sem textura. Foram 10 anos de testes, erros e aperfeiçoamento até chegar na perfeição.</p>
-                        <p>Hoje, eu não vendo apenas receitas. Eu entrego a você a **liberdade** de sentar à mesa e ter prazer de comer com saúde novamente.</p>
-                        <a href="#oferta" class="main-cta" style="padding: 15px 30px; font-size: 16px;">CONHECER O APLICATIVO</a>
-                    </div>
+        <!-- AUTHORITY -->
+        <section class="authority reveal">
+            <div class="container auth-flex">
+                <div class="auth-img">
+                    <img src="https://deliciassemgluten.online/wp-content/uploads/2023/11/carla-ramos.jpg" alt="Chef Carla Ramos">
+                </div>
+                <div class="auth-text">
+                    <h2>"Eu precisei aprender para salvar a mesa da minha filha."</h2>
+                    <p>Olá, eu sou a **Chef Carla Ramos**. Minha história na panificação inclusiva começou pelo amor à minha filha Sofia, quando ela foi diagnosticada com intolerância.</p>
+                    <p>Depois de anos testando receitas ruins e desperdiçando ingredientes, eu reuni as melhores técnicas que **realmente funcionam**. Eu criei o que eu gostaria de ter tido no começo.</p>
+                    <p>Meu objetivo é que você nunca mais jogue dinheiro fora e que sua família sinta prazer em comer novamente.</p>
+                    <a href="#oferta" class="main-cta" style="padding: 15px 30px; font-size: 16px;">CONHECER A METODOLOGIA</a>
                 </div>
             </div>
         </section>
 
-        <!-- WHAT YOU GET -->
-        <section class="included reveal">
-            <div class="container">
-                <h2 style="text-align: center; margin-bottom: 50px;">O que você vai receber hoje:</h2>
-                <div class="grid-3">
-                    <div class="feature-card">
-                        <i class="fas fa-mobile-screen-button"></i>
-                        <h3>Aplicativo Exclusivo</h3>
-                        <p>Acesse todas as +200 receitas de qualquer lugar, direto no seu celular.</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-video"></i>
-                        <h3>Videoaulas Passo a Passo</h3>
-                        <p>Eu te mostro o ponto exato da massa para você nunca mais errar.</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-file-pdf"></i>
-                        <h3>Apostilas em PDF</h3>
-                        <p>Material de apoio detalhado para você imprimir e ter sempre à mão.</p>
-                    </div>
+        <!-- MOCKUP SECTION -->
+        <section style="background: white;" class="reveal">
+            <div class="container" style="text-align: center;">
+                <h2 style="margin-bottom: 40px;">O que você vai dominar no Aplicativo:</h2>
+                <img src="mockup_v3.png" alt="Mockup Premium" style="max-width: 100%; border-radius: 20px;">
+                <div class="grid-3" style="margin-top: 50px;">
+                    <div class="feature-card"><i class="fas fa-bread-slice"></i><h3>Pães Tradicionais</h3><p>Francês, Batata, Mandioquinha e mais.</p></div>
+                    <div class="feature-card"><i class="fas fa-blender"></i><h3>Panificadora</h3><p>Receitas automáticas perfeitas.</p></div>
+                    <div class="feature-card"><i class="fas fa-pizza-slice"></i><h3>Massas e Bolos</h3><p>Pizzas, Nhoques e Brownies exclusivos.</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- PRICING -->
-        <section id="oferta" class="pricing reveal">
+        <!-- BONUSES -->
+        <section class="bonuses reveal">
             <div class="container">
-                <div class="price-box">
-                    <span class="limited-tag">⚠️ RESTAM APENAS 08 VAGAS PROMOCIONAIS</span>
-                    <h2>Aproveite sua Última Chance</h2>
-                    <span class="old-price">De R$ 197,00 por</span>
-                    <span class="installment">12x de R$ 7,02</span>
-                    <span class="new-price">R$ 69,90</span>
-                    <p style="margin-bottom: 25px; opacity: 0.8;">à vista no PIX ou Cartão</p>
+                <h2 style="text-align: center; margin-bottom: 50px;">Bônus que valem mais que o produto:</h2>
+                <div class="bonus-grid">
+                    <div class="bonus-card"><span class="bonus-tag">GRÁTIS HOJE</span><h3>Guia de Farinhas</h3><p class="val">Valor: R$ 67</p></div>
+                    <div class="bonus-card"><span class="bonus-tag">GRÁTIS HOJE</span><h3>Receitas Low Carb</h3><p class="val">Valor: R$ 97</p></div>
+                    <div class="bonus-card"><span class="bonus-tag">GRÁTIS HOJE</span><h3>Como Vender e Lucrar</h3><p class="val">Valor: R$ 147</p></div>
+                    <div class="bonus-card"><span class="bonus-tag">GRÁTIS HOJE</span><h3>Lista Econômica</h3><p class="val">Valor: R$ 27</p></div>
+                    <div class="bonus-card"><span class="bonus-tag">GRÁTIS HOJE</span><h3>Receitas Air Fryer</h3><p class="val">Valor: R$ 47</p></div>
+                    <div class="bonus-card"><span class="bonus-tag">GRÁTIS HOJE</span><h3>Certificado Premium</h3><p class="val">Valor: INESTIMÁVEL</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROOF -->
+        <section class="reveal" style="background: var(--bg);">
+            <div class="container" style="text-align: center;">
+                <h2>Quem aplica, aprova:</h2>
+                <img src="social_proof.png" alt="Depoimentos WhatsApp" style="max-width: 100%; margin-top: 40px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
+            </div>
+        </section>
+
+        <!-- OFFER -->
+        <section id="oferta" class="offer reveal">
+            <div class="container">
+                <div class="offer-card">
+                    <span class="vagas">PROMOÇÃO VÁLIDA PARA OS PRÓXIMOS 17 CLIENTES</span>
+                    <h2>Oferta Única e Exclusiva</h2>
+                    <ul class="inc">
+                        <li><i class="fas fa-check"></i> Aplicativo Premium +200 Receitas</li>
+                        <li><i class="fas fa-check"></i> 06 Bônus Exclusivos de Elite</li>
+                        <li><i class="fas fa-check"></i> Suporte com a Equipe da Chef</li>
+                        <li><i class="fas fa-check"></i> Comunidade Privada WhatsApp</li>
+                        <li><i class="fas fa-check"></i> Acesso Vitalício + Certificado</li>
+                    </ul>
+                    <span class="old-p">De R$ 197,00 por apenas</span>
+                    <span class="inst">12x de R$ 7,02</span>
+                    <span class="new-p">R$ 69,90</span>
+                    <p style="margin: 20px 0 30px; opacity: 0.6;">(Menos que um café por mês)</p>
+                    <a href="https://checkout.doppus.app/12573015" class="main-cta" style="width: 100%;">SIM! QUERO RECEBER TODAS AS RECEITAS AGORA</a>
                     
-                    <a href="https://checkout.doppus.app/12573015" class="main-cta">SIM! EU QUERO A MINHA VAGA</a>
-
-                    <div class="progress-box">
-                        <div class="progress-bg"><div class="progress-fill"></div></div>
-                        <p style="font-size: 12px; font-weight: 700; opacity: 0.7;">87% DO LOTE PROMOCIONAL PREENCHIDO</p>
+                    <div style="margin-top: 30px; opacity: 0.5;">
+                        <img src="https://deliciassemgluten.online/wp-content/uploads/2023/11/compra-segura.png" alt="Seguro" style="max-width: 250px;">
                     </div>
-
-                    <img src="https://deliciassemgluten.online/wp-content/uploads/2023/11/compra-segura.png" alt="Segurança" style="max-width: 200px; margin-top: 30px; opacity: 0.6;">
                 </div>
             </div>
         </section>
@@ -238,59 +242,35 @@
         <!-- GUARANTEE -->
         <section class="reveal" style="text-align: center;">
             <div class="container">
-                <img src="https://deliciassemgluten.online/wp-content/uploads/2023/11/selo-garantia.png" alt="Garantia" style="max-width: 120px; margin-bottom: 20px;">
-                <h2>Risco Zero: Garantia Incondicional</h2>
-                <p style="max-width: 700px; margin: 0 auto; color: var(--text-light); font-weight: 500;">Você tem 7 dias inteiros para testar o método. Se não amar as receitas ou sentir que não é para você, eu devolvo cada centavo do seu dinheiro. O risco é todo meu.</p>
-            </div>
-        </section>
-
-        <!-- FAQ -->
-        <section class="reveal">
-            <div class="container">
-                <h2 style="text-align: center; margin-bottom: 40px;">Dúvidas Comuns</h2>
-                <div style="max-width: 700px; margin: 0 auto;">
-                    <div class="faq-item">
-                        <div class="faq-q">O acesso é vitalício? <i class="fas fa-chevron-down"></i></div>
-                        <div class="faq-a">Sim! Uma vez comprado, o material é seu para sempre. Assista no seu ritmo.</div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-q">Preciso de ingredientes caros? <i class="fas fa-chevron-down"></i></div>
-                        <div class="faq-a">Não. Eu te ensino a usar ingredientes acessíveis e até como fazer seu próprio mix de farinhas em casa.</div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-q">Serve para quem quer vender? <i class="fas fa-chevron-down"></i></div>
-                        <div class="faq-a">Com certeza! As receitas têm padrão de venda e alta aceitação no mercado.</div>
-                    </div>
-                </div>
+                <img src="https://deliciassemgluten.online/wp-content/uploads/2023/11/selo-garantia.png" alt="Selo" style="max-width: 130px; margin-bottom: 25px;">
+                <h2>Garantia Blindada de 7 Dias</h2>
+                <p style="max-width: 750px; margin: 0 auto; color: var(--text-light); font-weight: 500;">Você entra, testa as receitas, vê as aulas e se não for o melhor material que já comprou, eu devolvo 100% do seu dinheiro. Sem perguntas. O risco é meu.</p>
             </div>
         </section>
     </main>
 
-    <div class="sticky-footer" id="sticky">
-        <a href="#oferta" class="main-cta" style="width: 100%; text-align: center; padding: 15px;">QUERO CUIDAR DE MIM AGORA</a>
+    <div class="sticky" id="sticky">
+        <a href="#oferta" class="main-cta" style="width: 100%; text-align: center;">QUERO RECEBER AS RECEITAS AGORA</a>
     </div>
 
-    <footer style="background: #111; color: #666; padding: 60px 0; text-align: center; font-size: 13px;">
+    <footer>
         <div class="container">
             <p>© 2026 DKN Marketing Digital - Todos os direitos reservados.</p>
-            <p style="margin-top: 15px; line-height: 1.4;">Aviso legal: Este site não é afiliado ao Facebook. Resultados variam de pessoa para pessoa.</p>
+            <p style="margin-top: 15px; opacity: 0.6;">Aviso: Este site não é do Facebook. Resultados podem variar.</p>
         </div>
     </footer>
 
     <script>
-        // TIMER
-        function startTimer(duration, display) {
-            var timer = duration, min, sec;
-            setInterval(function () {
-                min = parseInt(timer / 60, 10);
-                sec = parseInt(timer % 60, 10);
-                display.textContent = (min < 10 ? "0" + min : min) + ":" + (sec < 10 ? "0" + sec : sec);
-                if (--timer < 0) timer = duration;
+        // TIMER 15:00
+        function timer(d, disp) {
+            var t = d, m, s;
+            setInterval(() => {
+                m = parseInt(t / 60, 10); s = parseInt(t % 60, 10);
+                disp.textContent = (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
+                if (--t < 0) t = d;
             }, 1000);
         }
-        window.onload = function () {
-            startTimer(60 * 15, document.querySelector('#timer'));
-        };
+        window.onload = () => timer(60 * 15, document.querySelector('#timer'));
 
         // REVEAL
         const obs = new IntersectionObserver((es) => {
@@ -300,10 +280,10 @@
 
         // STICKY
         window.onscroll = () => {
-            document.getElementById('sticky').classList.toggle('visible', window.scrollY > 800);
+            document.getElementById('sticky').classList.toggle('active', window.scrollY > 800);
         };
 
-        // FAQ
+        // FAQ simple toggle
         document.querySelectorAll('.faq-q').forEach(q => {
             q.onclick = () => q.parentElement.classList.toggle('active');
         });
