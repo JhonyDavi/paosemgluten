@@ -3,19 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pães Artesanais Sem Glúten — Chef Helena Barros</title>
+    <title>DV – Site Chef Helena Barros – Delícias Sem Glúten</title>
     
-    <!-- Google Fonts (Mesmas do original) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- CSS Dependencies -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <style>
         :root {
-            --wp--preset--color--black: #000000;
             --primary-brown: #2d1a12;
             --accent-gold: #f7bd57;
             --accent-orange: #eeaf49;
@@ -26,286 +22,281 @@
         }
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #f9f9f9; 
-            color: var(--text-dark); 
-            line-height: 1.55;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; line-height: 1.2; }
-        p { margin-bottom: 1.2rem; }
-
-        .container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 20px; }
-
-        /* REPLICATING ELEMENTOR OVERLAYS & SECTIONS */
-        .e-con-boxed { padding: 80px 0; position: relative; }
+        body { font-family: 'Inter', sans-serif; background: #f9f9f9; color: var(--text-dark); overflow-x: hidden; line-height: 1.6; }
         
-        /* HERO (Section 888cf2e) */
-        .hero-section {
-            background: linear-gradient(rgba(45, 26, 18, 0.8), rgba(45, 26, 18, 0.8)), url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1600');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            padding: 120px 0 160px;
-            text-align: center;
-            position: relative;
-        }
-        .hero-section h2.chef-name { font-size: 19px; letter-spacing: 2px; margin-bottom: 20px; font-family: 'Inter', sans-serif; font-weight: 900; }
-        .hero-section h1.headline { font-size: clamp(32px, 6vw, 56px); margin-bottom: 30px; line-height: 1.1; }
-        .hero-section h2.subheadline { font-size: 18px; max-width: 900px; margin: 0 auto; font-family: 'Inter', sans-serif; opacity: 0.9; }
-        
-        .shape-divider-bottom {
-            position: absolute; bottom: 0; left: 0; width: 100%; overflow: hidden; line-height: 0;
-        }
-        .shape-divider-bottom svg {
-            position: relative; display: block; width: calc(100% + 1.3px); height: 100px; fill: #f9f9f9;
-        }
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
 
-        /* APP SECTION (71a4139) */
-        .flex-section { display: flex; flex-wrap: wrap; align-items: center; gap: 40px; padding: 100px 0; }
-        .flex-child { flex: 1; min-width: 320px; }
-        .flex-section h2 { font-size: 38px; color: #724a2d; margin-bottom: 30px; }
-        .flex-section p { font-size: 17px; color: #444; }
+        /* TOP BANNER */
+        .top-banner { background: #000; color: #fff; padding: 10px; text-align: center; font-weight: 800; font-size: 14px; position: sticky; top: 0; z-index: 1000; }
+        .top-banner span { color: var(--accent-gold); }
 
-        /* BUTTON MOEMA (Original EA Style) */
-        .btn-moema {
-            display: inline-block;
-            background: #241811;
-            color: #fff;
-            padding: 22px 50px;
-            font-size: 18px;
-            font-weight: 800;
-            text-transform: uppercase;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            text-align: center;
-        }
-        .btn-moema:hover { background: var(--accent-orange); transform: translateY(-3px); }
+        /* HERO */
+        .hero { background: linear-gradient(rgba(45,26,18,0.85), rgba(45,26,18,0.85)), url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1600'); background-size: cover; background-position: center; color: #fff; padding: 80px 0 120px; text-align: center; position: relative; }
+        .hero h2 { font-size: 18px; letter-spacing: 3px; font-weight: 900; margin-bottom: 25px; }
+        .hero h1 { font-family: 'Playfair Display'; font-size: clamp(32px, 5vw, 52px); line-height: 1.1; margin-bottom: 30px; }
+        .hero p { font-size: 18px; max-width: 900px; margin: 0 auto 40px; color: #eee; }
+
+        /* WAVE DIVIDER */
+        .wave-divider { position: absolute; bottom: 0; left: 0; width: 100%; line-height: 0; }
+        .wave-divider svg { display: block; width: 100%; height: 80px; fill: #f9f9f9; }
+
+        /* APP SECTION */
+        .app-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; padding: 100px 0; align-items: center; }
+        .app-grid h2 { font-size: 38px; color: #724a2d; margin-bottom: 25px; }
+        .app-grid p { margin-bottom: 15px; font-size: 17px; }
 
         /* RECIPE LISTS */
-        .recipe-box { background: #fff; border-radius: 15px; padding: 40px; box-shadow: 0 15px 40px rgba(0,0,0,0.05); margin-bottom: 40px; }
-        .icon-list { list-style: none; margin-top: 20px; }
-        .icon-list li { display: flex; align-items: center; gap: 15px; padding: 10px 0; font-weight: 600; color: #724a2d; }
-        .icon-list li i { color: var(--accent-orange); font-size: 20px; }
+        .recipe-section { background: linear-gradient(180deg, #2d1a12 0%, #1a0f0a 100%); padding: 100px 0; color: #fff; }
+        .recipe-card { background: #fff; color: #333; border-radius: 15px; padding: 30px; margin-bottom: 30px; height: 100%; }
+        .recipe-card h3 { color: #724a2d; border-bottom: 2px solid #eee; padding-bottom: 15px; margin-bottom: 20px; }
+        .recipe-list { list-style: none; }
+        .recipe-list li { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-weight: 600; }
+        .recipe-list li i { color: var(--accent-orange); }
 
-        /* BONUS CARDS (b35bfc7) */
-        .bonus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
-        .bonus-card { background: #fff; border: 1px solid #eee; border-radius: 15px; padding: 30px; text-align: center; position: relative; overflow: hidden; }
-        .bonus-card h4 { font-size: 18px; margin-bottom: 15px; color: #241811; }
-        .bonus-card img { max-width: 150px; margin: 0 auto 20px; }
-        .bonus-price { color: var(--urgency-red); text-decoration: line-through; font-weight: 700; }
-        .bonus-free { color: var(--success-green); font-weight: 900; font-size: 20px; display: block; margin-top: 5px; }
+        /* TESTIMONIALS */
+        .testimonials { padding: 100px 0; background: #fff; text-align: center; }
+        .swiper { width: 100%; padding-bottom: 50px; }
+        .swiper-slide img { border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-width: 100%; }
 
-        /* URGENCY BOX (ce211ee) */
-        .urgency-section { background: #fff; border: 2px dashed #724a2d; padding: 60px 40px; text-align: center; border-radius: 20px; margin: 80px 0; }
-        .urgency-section i { font-size: 60px; color: #724a2d; margin-bottom: 20px; }
-        .progress-bar { height: 30px; background: #eee; border-radius: 15px; overflow: hidden; margin: 30px 0; position: relative; }
-        .progress-fill { height: 100%; background: #724a2d; width: 85%; transition: width 2s ease-in-out; }
+        /* BIO SECTION */
+        .bio-section { padding: 100px 0; background: #fdfaf6; }
+        .bio-flex { display: flex; align-items: center; gap: 60px; }
+        .bio-img { flex: 1; border-radius: 20px; overflow: hidden; }
+        .bio-text { flex: 1.5; }
+        .bio-text h2 { font-size: 42px; color: #724a2d; margin-bottom: 25px; }
 
-        /* NOTIFICATIONS */
-        .notif-bubble { position: fixed; bottom: 20px; left: 20px; background: #fff; padding: 15px 25px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); z-index: 9999; transform: translateX(-400px); transition: transform 0.5s; }
-        .notif-bubble.active { transform: translateX(0); }
+        /* BONUS CARDS */
+        .bonus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 50px; }
+        .bonus-card { background: #fff; padding: 30px; border-radius: 15px; text-align: center; border: 1px solid #eee; }
+        .bonus-card img { max-width: 180px; margin: 0 auto 20px; }
+        .bonus-card h4 { font-size: 18px; margin-bottom: 10px; }
+        .price-tag { color: var(--urgency-red); text-decoration: line-through; }
+        .free-tag { color: var(--success-green); font-weight: 900; font-size: 22px; display: block; }
+
+        /* OFFER BOX */
+        .offer-box { background: #fff; border: 3px dashed #724a2d; border-radius: 30px; padding: 60px; text-align: center; margin-top: 80px; }
+        .progress-container { background: #eee; height: 35px; border-radius: 20px; margin: 30px 0; overflow: hidden; position: relative; }
+        .progress-bar { background: #724a2d; width: 85%; height: 100%; transition: width 2s; }
+        
+        /* BTN MOEMA */
+        .btn-cta { display: inline-block; background: #241811; color: #fff; padding: 25px 60px; border-radius: 50px; font-weight: 900; font-size: 20px; text-decoration: none; text-transform: uppercase; margin-top: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+        /* GUARANTEE */
+        .guarantee { background: #fff; padding: 60px; border-radius: 20px; display: flex; align-items: center; gap: 40px; margin-top: 60px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
+        .guarantee img { max-width: 150px; }
 
         /* FAQ */
-        details { background: #fff; margin-bottom: 15px; border-radius: 10px; border: 1px solid #eee; }
-        summary { padding: 20px; cursor: pointer; font-weight: 700; list-style: none; display: flex; justify-content: space-between; }
+        .faq-section { padding: 100px 0; }
+        details { background: #fff; margin-bottom: 10px; border-radius: 10px; border: 1px solid #eee; }
+        summary { padding: 20px; font-weight: 700; cursor: pointer; list-style: none; display: flex; justify-content: space-between; }
         summary::after { content: '\f078'; font-family: 'Font Awesome 6 Free'; font-weight: 900; }
+        .faq-content { padding: 0 20px 20px; color: #666; }
+
+        /* STICKY NOTIF */
+        .notif { position: fixed; bottom: 20px; left: 20px; background: #fff; padding: 15px 25px; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); z-index: 10000; transform: translateY(200px); transition: 0.5s; }
+        .notif.active { transform: translateY(0); }
 
         @media (max-width: 768px) {
-            .flex-section { flex-direction: column; text-align: center; }
-            .btn-moema { width: 100%; }
+            .app-grid, .bio-flex { grid-template-columns: 1fr; flex-direction: column; text-align: center; }
+            .hero h1 { font-size: 34px; }
+            .offer-box { padding: 30px 15px; }
         }
     </style>
 </head>
-<body class="elementor-canvas">
+<body>
 
-    <!-- HERO SECTION -->
-    <div class="hero-section">
-        <div class="container">
-            <h2 class="chef-name">CHEF HELENA BARROS</h2>
-            <h1 class="headline">Aprenda a fazer os <span style="color: var(--accent-gold);">Pães Artesanais Sem Glúten</span> mais incríveis da sua vida.</h1>
-            <h2 class="subheadline">Tem pouca ou nenhuma experiência na panificação artesanal? Sem problemas! As <span style="color: var(--accent-gold); font-weight: 900;">Vídeo aulas Exclusivas</span> passo a passo vão te guiar com clareza até os melhores resultados.</h2>
-            
-            <a href="#oferta" class="btn-moema" style="margin-top: 50px;">SIM! EU QUERO APRENDER</a>
-        </div>
-        <div class="shape-divider-bottom">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
-                <path d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7
-                c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4
-                c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"></path>
-            </svg>
-        </div>
+    <div class="top-banner">
+        OFERTA ATIVADA: termina em <span id="timer">14:59</span>!
     </div>
 
-    <!-- 1º APLICATIVO (71a4139) -->
-    <section class="container flex-section">
-        <div class="flex-child">
-            <img src="https://deliciassemgluten.online/wp-content/uploads/2024/01/primeiro.png" alt="App Preview">
+    <section class="hero">
+        <div class="container">
+            <h2>CHEF HELENA BARROS</h2>
+            <h1>Aprenda a fazer os <span style="color: var(--accent-gold);">Pães Artesanais Sem Glúten</span> mais incríveis da sua vida.</h1>
+            <p>Tem pouca ou nenhuma experiência na panificação artesanal? Sem problemas! As <strong>Vídeo aulas Exclusivas</strong> passo a passo vão te guiar com clareza até os melhores resultados.</p>
+            <a href="#oferta" class="btn-cta">SIM! EU QUERO APRENDER</a>
         </div>
-        <div class="flex-child">
+        <div class="wave-divider">
+            <svg viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"></path></svg>
+        </div>
+    </section>
+
+    <section class="container app-grid">
+        <img src="https://deliciassemgluten.online/wp-content/uploads/2024/01/primeiro.png" alt="App">
+        <div>
             <h2><span style="color: #724a2d;">1º Aplicativo</span> de Receitas sem Glúten</h2>
-            <p>Mais de <strong>200 receitas testadas e aprovadas</strong>, explicadas com <strong>videoaulas gravadas</strong> passo a passo <strong>Visual</strong>.</p>
+            <p>Mais de <strong>200 receitas testadas e aprovadas</strong>, explicadas com <strong>videoaulas gravadas</strong> passo a passo visual.</p>
             <p>Você vai aprender a fazer <strong>pães fofinhos, bolos deliciosos, massas leves e panetones incríveis</strong> — mesmo que nunca tenha cozinhado sem glúten antes.</p>
-            <p>Tudo foi pensado para mulheres que querem praticidade, saúde e sabor no <strong>dia a dia</strong>.</p>
+            <p>Ideal para iniciantes e também para quem já tem experiência na cozinha. A Chef Helena te guia em cada etapa com clareza e carinho.</p>
         </div>
     </section>
 
-    <!-- FAÇA PÃES (cd2f9e9) -->
-    <section style="background: #fff; padding: 100px 0;">
-        <div class="container flex-section" style="flex-direction: row-reverse;">
-            <div class="flex-child">
-                <img src="https://deliciassemgluten.online/wp-content/uploads/2023/12/guia_paes_sem_gluten-1-1.webp" alt="Pão Fofinho">
-            </div>
-            <div class="flex-child">
-                <h2><span style="color: #724a2d;">Faça Pães Sem Glúten</span> Fofinhos, Deliciosos e Fáceis de Fazer...</h2>
-                <p>Você vai aprender a fazer <strong>pães artesanais incríveis</strong> — macios por dentro, com casquinha crocante por fora, e sem nenhuma complicação!</p>
-                <p>Mesmo que você nunca tenha feito pão antes, as <strong>videoaulas exclusivas </strong>te mostram cada etapa com clareza.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- TRANSFORM LIFE (9830bcc) -->
-    <section class="container flex-section">
-        <div class="flex-child">
-            <img src="https://deliciassemgluten.online/wp-content/uploads/2023/12/guia_paes_sem_gluten-2.png" alt="Health Benefits">
-        </div>
-        <div class="flex-child">
-            <h2><span style="color: #724a2d;">Transforme a sua vida</span> eliminando o glúten!</h2>
-            <p><strong>Chega daquela sensação de inchaço, dores de cabeças, descontrole intestinal, queda de cabelo, unhas quebradiças</strong>&nbsp;e outros sintomas que só o glúten causa.</p>
-            <p>Hoje você vai ter a&nbsp;<strong>oportunidade de aprender</strong>&nbsp;comigo, Chef Helena Barros, e ver como a&nbsp;<strong>sua vida se tornará muito melhor sem o glúten.</strong></p>
-            <a href="#oferta" class="btn-moema">SIM! EU QUERO APRENDER</a>
-        </div>
-    </section>
-
-    <!-- RECIPES GRID (c36947c) -->
-    <section style="background: #2d1a12; color: #fff; padding: 100px 0;">
+    <section class="recipe-section">
         <div class="container">
-            <h2 style="color: #fff; text-align: center; margin-bottom: 60px;">Quais Receitas Você Vai Aprender?</h2>
+            <h2 style="text-align: center; font-size: 36px; margin-bottom: 60px;">Quais Receitas Você Vai Aprender?</h2>
             <div class="bonus-grid">
-                <div class="recipe-box">
-                    <img src="https://deliciassemgluten.online/wp-content/uploads/2024/05/imagens-zero-gl195186ten-37-1.webp" alt="Pães">
-                    <h3>Receitas de Pães:</h3>
-                    <ul class="icon-list">
-                        <li><i class="fas fa-check-circle"></i> Pão Francês</li>
-                        <li><i class="fas fa-check-circle"></i> Pão de Batata</li>
-                        <li><i class="fas fa-check-circle"></i> Pão Australiano</li>
-                        <li><i class="fas fa-check-circle"></i> Pão de Hambúrguer</li>
+                <div class="recipe-card">
+                    <h3>Pães Artesanais</h3>
+                    <ul class="recipe-list">
+                        <li><i class="fas fa-check"></i> Pão Francês</li>
+                        <li><i class="fas fa-check"></i> Pão de Batata</li>
+                        <li><i class="fas fa-check"></i> Pão Australiano</li>
+                        <li><i class="fas fa-check"></i> Pão de Mandioquinha</li>
+                        <li><i class="fas fa-check"></i> Pão Multigrãos</li>
                     </ul>
                 </div>
-                <div class="recipe-box">
-                    <img src="https://deliciassemgluten.online/wp-content/uploads/2025/12/maquina-de-pao.png-1024x536.webp" alt="Panificadora">
-                    <h3>Pães na Panificadora:</h3>
-                    <ul class="icon-list">
-                        <li><i class="fas fa-check-circle"></i> Pão de Leite</li>
-                        <li><i class="fas fa-check-circle"></i> Pão de Abóbora</li>
-                        <li><i class="fas fa-check-circle"></i> Pão Integral</li>
+                <div class="recipe-card">
+                    <h3>Panificadora</h3>
+                    <ul class="recipe-list">
+                        <li><i class="fas fa-check"></i> Pão de Leite</li>
+                        <li><i class="fas fa-check"></i> Pão de Abóbora</li>
+                        <li><i class="fas fa-check"></i> Pão de Sementes</li>
+                        <li><i class="fas fa-check"></i> Pão Integral</li>
+                        <li><i class="fas fa-check"></i> Pão Doce de Coco</li>
                     </ul>
                 </div>
-                <div class="recipe-box">
-                    <img src="https://deliciassemgluten.online/wp-content/uploads/2024/05/imagens-zero-gl195186ten-39-1.webp" alt="Mix Farinhas">
-                    <h3>Mix de Farinhas:</h3>
-                    <ul class="icon-list">
-                        <li><i class="fas fa-check-circle"></i> Mix para Pães</li>
-                        <li><i class="fas fa-check-circle"></i> Mix para Bolos</li>
-                        <li><i class="fas fa-check-circle"></i> Mix Integral</li>
+                <div class="recipe-card">
+                    <h3>Mix de Farinhas</h3>
+                    <ul class="recipe-list">
+                        <li><i class="fas fa-check"></i> Mix para Pães</li>
+                        <li><i class="fas fa-check"></i> Mix para Bolos</li>
+                        <li><i class="fas fa-check"></i> Mix para Pizza</li>
+                        <li><i class="fas fa-check"></i> Mix Integral Caseiro</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CHEF HELENA (22b6279) -->
-    <section class="container flex-section">
-        <div class="flex-child">
-            <img src="https://deliciassemgluten.online/wp-content/uploads/2024/01/fotoo.png" alt="Chef Helena Barros">
-        </div>
-        <div class="flex-child">
-            <h2><span style="color: #724a2d;">Chef</span> Helena Barros</h2>
-            <p>Minha jornada na gastronomia foi transformada quando minha filha, Sofia, foi diagnosticada com intolerância ao glúten.</p>
-            <p>Determinada a proporcionar uma dieta saudável, mergulhei na culinária sem glúten, explorando ingredientes alternativos e técnicas inovadoras.</p>
-            <p>Hoje, compartilho meu conhecimento para inspirar milhares de famílias a abraçar uma vida com mais saúde e sabor.</p>
+    <section class="bio-section">
+        <div class="container bio-flex">
+            <div class="bio-img">
+                <img src="https://deliciassemgluten.online/wp-content/uploads/2024/01/fotoo.png" alt="Chef Helena" style="width: 100%;">
+            </div>
+            <div class="bio-text">
+                <h2>Chef Helena Barros</h2>
+                <p>Minha vida na gastronomia foi transformada quando minha filha, Sofia, foi diagnosticada com intolerância ao glúten.</p>
+                <p>Determinada a proporcionar uma vida saudável para ela, mergulhei fundo na culinária alternativa. Hoje, após mais de 10 anos de testes e acertos, minha missão é ajudar você a comer com prazer novamente.</p>
+                <p>Minhas receitas não são apenas "sem glúten", são <strong>deliciosas de verdade</strong>, com textura e sabor que vão surpreender sua família.</p>
+            </div>
         </div>
     </section>
 
-    <!-- BONUSES (b35bfc7) -->
-    <section style="background: #fdfaf6; padding: 100px 0;" id="oferta">
+    <section class="testimonials">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 50px;"><span style="color: #724a2d;">Adquirindo agora você recebe</span> Aplicativo Exclusivo +6 Bônus</h2>
-            <div class="bonus-grid">
-                <div class="bonus-card">
-                    <h4>Pães Trançados</h4>
-                    <img src="https://deliciassemgluten.online/wp-content/uploads/2024/01/2-2-203x300.png" alt="Bonus 1">
-                    <span class="bonus-price">R$ 35,96</span>
-                    <span class="bonus-free">GRÁTIS</span>
+            <h2 style="color: #724a2d; margin-bottom: 40px;">O que nossas alunas estão dizendo:</h2>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="https://deliciassemgluten.online/wp-content/uploads/2024/04/Prova-1.png" alt="Depoimento"></div>
+                    <div class="swiper-slide"><img src="https://deliciassemgluten.online/wp-content/uploads/2024/04/prova-2.png" alt="Depoimento"></div>
+                    <div class="swiper-slide"><img src="https://deliciassemgluten.online/wp-content/uploads/2024/04/prova-3.png" alt="Depoimento"></div>
                 </div>
-                <div class="bonus-card">
-                    <h4>Bolos Perfeitos</h4>
-                    <img src="https://deliciassemgluten.online/wp-content/uploads/2024/01/3-203x300.png" alt="Bonus 2">
-                    <span class="bonus-price">R$ 74,50</span>
-                    <span class="bonus-free">GRÁTIS</span>
-                </div>
-                <div class="bonus-card">
-                    <h4>Fermentação Natural</h4>
-                    <img src="https://deliciassemgluten.online/wp-content/uploads/2024/01/8-203x300.png" alt="Bonus 3">
-                    <span class="bonus-price">R$ 89,90</span>
-                    <span class="bonus-free">GRÁTIS</span>
-                </div>
-            </div>
-
-            <!-- PRICING BOX (ce211ee) -->
-            <div class="urgency-section">
-                <i class="fas fa-exclamation-triangle"></i>
-                <h2>ATENÇÃO VAGAS LIMITADAS!</h2>
-                <p>Liberamos apenas 10 cupons promocionais por dia.</p>
-                <div class="progress-bar">
-                    <div class="progress-fill"></div>
-                </div>
-                
-                <p style="font-size: 24px; color: #724a2d;">DE <del>R$ 1.497,00</del> POR APENAS</p>
-                <p style="font-size: 64px; font-weight: 900; color: #724a2d; margin: 20px 0;">12x R$ 7,02</p>
-                <p style="font-size: 22px;">ou R$ 67,00 à vista</p>
-                
-                <a href="#" class="btn-moema" style="margin-top: 40px; background: #edb35a; color: #000;">SIM! QUERO GARANTIR MINHA VAGA</a>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer style="background: #241811; color: #fff; padding: 60px 0; text-align: center;">
-        <p>© 2024 Helena Barros — Delícias Sem Glúten. Todos os direitos reservados.</p>
+    <section class="container" id="oferta">
+        <div class="offer-box">
+            <i class="fas fa-exclamation-triangle" style="font-size: 50px; color: #724a2d; margin-bottom: 20px;"></i>
+            <h2 style="font-size: 32px; color: #724a2d;">ATENÇÃO: VAGAS LIMITADAS!</h2>
+            <p>Liberamos apenas 10 cupons promocionais por dia para garantir o suporte.</p>
+            
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+            <p style="font-weight: 700;">Restam apenas 3 vagas com desconto hoje!</p>
+
+            <div style="margin-top: 50px;">
+                <p style="font-size: 22px; color: #724a2d;">DE <del>R$ 1.497,00</del> POR APENAS</p>
+                <h3 style="font-size: 68px; font-weight: 900; color: #724a2d; margin: 15px 0;">12x R$ 7,02</h3>
+                <p style="font-size: 20px;">ou R$ 67,00 à vista</p>
+                <a href="https://pay.hotmart.com/xxxx" class="btn-cta">GARANTIR MINHA VAGA AGORA</a>
+                
+                <div style="margin-top: 30px; display: flex; justify-content: center; gap: 20px; opacity: 0.7;">
+                    <img src="https://deliciassemgluten.online/wp-content/uploads/2023/12/icons8-caution-68-1.png" width="40" alt="Secure">
+                    <img src="https://deliciassemgluten.online/wp-content/uploads/2024/01/icons8-chapeu-de-chef-50-1.png" width="40" alt="Chef">
+                </div>
+            </div>
+        </div>
+
+        <div class="guarantee">
+            <img src="https://deliciassemgluten.online/wp-content/uploads/2023/12/guia_paes_sem_gluten-3.png" alt="Garantia">
+            <div>
+                <h3 style="color: #724a2d; margin-bottom: 10px;">7 Dias de Garantia Incondicional</h3>
+                <p>Temos a certeza que irá se apaixonar. Mas se em até 7 dias você decidir que o material não é para você, devolvemos 100% do seu dinheiro. Sem perguntas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container faq-section">
+        <h2 style="text-align: center; margin-bottom: 50px;">Dúvidas Frequentes</h2>
+        <details>
+            <summary>Como vou receber o acesso?</summary>
+            <div class="faq-content">O acesso é enviado imediatamente para o seu e-mail após a confirmação do pagamento. Compras no cartão ou PIX chegam em menos de 2 minutos.</div>
+        </details>
+        <details>
+            <summary>O acesso é vitalício?</summary>
+            <div class="faq-content">Sim! Uma vez adquirido, o material é seu para sempre, incluindo todas as atualizações futuras.</div>
+        </details>
+        <details>
+            <summary>Nunca fiz pão na vida, consigo fazer?</summary>
+            <div class="faq-content">Com certeza! Nossas videoaulas foram gravadas pensando em quem está começando do zero absoluto. Mostramos o ponto exato da massa.</div>
+        </details>
+        <details>
+            <summary>É seguro comprar?</summary>
+            <div class="faq-content">Sim, utilizamos a maior plataforma de infoprodutos do Brasil, com criptografia de ponta e segurança total dos seus dados.</div>
+        </details>
+    </section>
+
+    <footer style="background: #241811; color: #fff; padding: 60px 0; text-align: center; font-size: 14px;">
+        <div class="container">
+            <p>© 2024 Helena Barros – Delícias Sem Glúten. Todos os direitos reservados.</p>
+            <p style="margin-top: 15px; opacity: 0.6;">Aviso Legal: Os resultados podem variar de pessoa para pessoa.</p>
+        </div>
     </footer>
 
-    <div class="notif-bubble" id="notif">
-        <div style="font-weight: 800;"><span id="notif-name">Mariana</span> acabou de entrar!</div>
-        <div style="font-size: 12px; color: #666;">Inscrita de São Paulo - SP</div>
+    <div class="notif" id="notif">
+        <strong><span id="buyer-name">Mariana</span></strong> de <span id="buyer-city">São Paulo</span> acabou de garantir o acesso!
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
-        // NOTIFICATIONS
-        const names = ["Juliana", "Ricardo", "Carla", "Beatriz", "Marcos", "Fernanda", "Elaine"];
-        const notif = document.getElementById('notif');
-        const notifName = document.getElementById('notif-name');
-
-        function showNotif() {
-            notifName.textContent = names[Math.floor(Math.random() * names.length)];
-            notif.classList.add('active');
-            setTimeout(() => { notif.classList.remove('active'); }, 4000);
-        }
-        setInterval(showNotif, 12000);
-        setTimeout(showNotif, 3000);
-
-        // PROTECT CONTENT
-        document.addEventListener('contextmenu', e => e.preventDefault());
-        document.addEventListener('keydown', e => {
-            if (e.ctrlKey && (e.key === 'u' || e.key === 's')) e.preventDefault();
+        // Swiper Initializer
+        const swiper = new Swiper(".mySwiper", {
+            pagination: { el: ".swiper-pagination", clickable: true },
+            autoplay: { delay: 5000 },
+            loop: true
         });
-    </script>
 
+        // Timer
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                display.textContent = minutes + ":" + seconds;
+                if (--timer < 0) timer = duration;
+            }, 1000);
+        }
+        window.onload = function () { startTimer(899, document.querySelector('#timer')); };
+
+        // Notifications
+        const names = ["Larissa", "Carla", "Beatriz", "Elaine", "Patricia", "Fernanda", "Monica"];
+        const cities = ["Rio de Janeiro", "Curitiba", "Belo Horizonte", "Fortaleza", "Porto Alegre"];
+        
+        function showNotif() {
+            document.getElementById('buyer-name').textContent = names[Math.floor(Math.random()*names.length)];
+            document.getElementById('buyer-city').textContent = cities[Math.floor(Math.random()*cities.length)];
+            const el = document.getElementById('notif');
+            el.classList.add('active');
+            setTimeout(() => el.classList.remove('active'), 5000);
+        }
+        setInterval(showNotif, 15000);
+        setTimeout(showNotif, 5000);
+    </script>
 </body>
 </html>
