@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pães Artesanais Sem Glúten — Chef Helena Barros</title>
-    <meta name="description" content="Aprenda a fazer os pães artesanais sem glúten mais incríveis da sua vida. Método testado e aprovado.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,240 +15,245 @@
 
     <style>
         :root {
-            --primary: #3e2723; /* Marrom Profundo */
-            --accent: #e67e22;  /* Dourado/Laranja */
-            --accent-hover: #d35400;
-            --bg-light: #fafafa;
-            --text-dark: #2c3e50;
+            --primary-brown: #2d1a12;
+            --action-gold: #edb35a;
+            --bg-cream: #fdfaf6;
+            --urgency-orange: #ff5200;
+            --text-dark: #2d1a12;
             --text-light: #ffffff;
-            --urgency: #ff6600;
-            --success: #2ecc71;
+            --success-green: #32c832;
             
-            --h1: clamp(34px, 7vw, 62px);
-            --h2: clamp(28px, 5vw, 42px);
-            --body: 18px;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Montserrat', sans-serif;
         }
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body { 
-            font-family: 'Montserrat', sans-serif; 
-            background-color: var(--bg-light); 
+            font-family: var(--font-sans); 
+            background-color: var(--bg-cream); 
             color: var(--text-dark); 
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 800; line-height: 1.1; }
+        h1, h2, h3 { font-family: var(--font-serif); font-weight: 800; line-height: 1.1; }
         img { max-width: 100%; height: auto; display: block; }
         .container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 20px; }
 
         /* TOP BAR */
-        .top-bar { background: var(--urgency); color: #fff; padding: 10px 0; text-align: center; font-weight: 700; position: fixed; top: 0; width: 100%; z-index: 2000; font-size: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-        .top-bar span { color: #fff; background: rgba(0,0,0,0.2); padding: 2px 8px; border-radius: 4px; margin-left: 5px; }
+        .top-bar { background: var(--urgency-orange); color: #fff; padding: 12px 0; text-align: center; font-weight: 700; position: fixed; top: 0; width: 100%; z-index: 2000; font-size: 14px; box-shadow: 0 2px 15px rgba(0,0,0,0.3); }
+        .top-bar span { background: rgba(0,0,0,0.2); padding: 2px 10px; border-radius: 4px; margin-left: 5px; font-variant-numeric: tabular-nums; }
 
         /* HERO */
         .hero { 
-            padding: 140px 0 80px; 
-            background: linear-gradient(rgba(62, 39, 35, 0.85), rgba(62, 39, 35, 0.85)), url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1600');
+            position: relative;
+            padding: 180px 0 120px; 
+            background: linear-gradient(rgba(45, 26, 18, 0.82), rgba(45, 26, 18, 0.82)), url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1600');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             color: var(--text-light);
-            text-align: center;
+            overflow: hidden;
         }
-        .hero h1 { margin-bottom: 24px; font-size: var(--h1); }
-        .hero p { font-size: 20px; margin-bottom: 40px; opacity: 0.9; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .hero-inner { display: flex; align-items: center; justify-content: flex-start; text-align: left; }
+        .hero-content { max-width: 750px; }
+        .hero .chef-badge { display: inline-block; background: var(--primary-brown); border: 1px solid var(--action-gold); color: var(--action-gold); padding: 8px 20px; border-radius: 50px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; }
+        .hero h1 { margin-bottom: 24px; font-size: clamp(36px, 8vw, 68px); letter-spacing: -1px; }
+        .hero p { font-size: 22px; margin-bottom: 48px; opacity: 0.95; font-weight: 500; }
         
+        .hero-divider {
+            position: absolute; bottom: 0; left: 0; width: 100%; overflow: hidden; line-height: 0; transform: rotate(180deg);
+        }
+        .hero-divider svg {
+            position: relative; display: block; width: calc(100% + 1.3px); height: 80px; fill: var(--bg-cream);
+        }
+
+        /* BUTTONS */
         .cta-btn {
             display: inline-block;
-            background: var(--accent);
-            color: #fff;
-            padding: 22px 48px;
+            background: var(--action-gold);
+            color: #000;
+            padding: 24px 60px;
             font-size: 20px;
-            font-weight: 800;
+            font-weight: 900;
             text-transform: uppercase;
             text-decoration: none;
             border-radius: 50px;
-            box-shadow: 0 10px 25px rgba(230, 126, 34, 0.4);
-            transition: all 0.3s ease;
-            animation: pulse 2s infinite;
+            box-shadow: 0 15px 35px rgba(237, 179, 90, 0.4);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: pulse 2.5s infinite;
         }
-        .cta-btn:hover { background: var(--accent-hover); transform: translateY(-3px); box-shadow: 0 15px 35px rgba(230, 126, 34, 0.6); animation: none; }
+        .cta-btn:hover { background: #fff; transform: translateY(-5px) scale(1.03); box-shadow: 0 20px 40px rgba(0,0,0,0.2); animation: none; }
         
         @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(230, 126, 34, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(230, 126, 34, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(230, 126, 34, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(237, 179, 90, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(237, 179, 90, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(237, 179, 90, 0); }
         }
 
         /* PAIN SECTION */
-        .pain { padding: 80px 0; background: #fff; text-align: center; }
-        .pain h2 { color: var(--primary); margin-bottom: 50px; }
-        .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .pain-item { padding: 40px; border-radius: 15px; background: var(--bg-light); border: 1px solid #eee; }
-        .pain-item i { font-size: 50px; color: #e74c3c; margin-bottom: 20px; }
-        .pain-item h3 { margin-bottom: 15px; font-family: 'Montserrat', sans-serif; font-size: 20px; }
+        .pain { padding: 100px 0; background: var(--bg-cream); text-align: center; }
+        .pain h2 { color: var(--primary-brown); margin-bottom: 60px; font-size: var(--h2); position: relative; padding-bottom: 20px; }
+        .pain h2::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: var(--action-gold); }
+        .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .pain-item { padding: 50px 40px; border-radius: 20px; background: #fff; box-shadow: 0 10px 40px rgba(0,0,0,0.03); border: 1px solid #f0f0f0; transition: transform 0.3s; }
+        .pain-item:hover { transform: translateY(-10px); }
+        .pain-item i { font-size: 60px; color: #d35400; margin-bottom: 30px; }
+        .pain-item h3 { margin-bottom: 20px; font-size: 24px; color: var(--primary-brown); }
 
-        /* TRANSFORMATION */
-        .transformation { padding: 80px 0; background: var(--primary); color: #fff; text-align: center; }
-        .compare-grid { display: grid; grid-template-columns: 1fr; gap: 40px; margin-top: 50px; }
-        @media (min-width: 768px) { .compare-grid { grid-template-columns: 1fr 1fr; } }
-        .compare-card { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); }
-        .compare-card img { border-radius: 15px; margin-bottom: 20px; height: 300px; object-fit: cover; width: 100%; }
-        .compare-card.bad { border-top: 5px solid #e74c3c; }
-        .compare-card.good { border-top: 5px solid var(--success); }
-
-        /* RECIPE CARDS */
+        /* MODULES/RECIPES */
         .recipes { padding: 100px 0; background: #fff; }
-        .recipes h2 { text-align: center; color: var(--primary); margin-bottom: 60px; }
-        .recipe-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .recipe-card { border-radius: 20px; overflow: hidden; box-shadow: 0 15px 45px rgba(0,0,0,0.07); transition: transform 0.3s ease; background: #fff; }
-        .recipe-card:hover { transform: translateY(-10px); }
-        .recipe-img { height: 250px; overflow: hidden; }
-        .recipe-img img { width: 100%; height: 100%; object-fit: cover; }
-        .recipe-info { padding: 30px; }
-        .recipe-info h3 { font-size: 22px; margin-bottom: 10px; color: var(--primary); }
-        .recipe-info p { color: #666; font-size: 15px; }
+        .recipes h2 { text-align: center; color: var(--primary-brown); margin-bottom: 80px; }
+        .recipe-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 40px; }
+        .recipe-card { border-radius: 25px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.08); background: #fff; border: 1px solid #f5f5f5; }
+        .recipe-img { height: 280px; overflow: hidden; position: relative; }
+        .recipe-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .recipe-card:hover .recipe-img img { transform: scale(1.1); }
+        .recipe-info { padding: 40px; }
+        .recipe-info h3 { font-size: 26px; margin-bottom: 20px; color: var(--primary-brown); border-bottom: 1px solid #eee; padding-bottom: 15px; }
+        .recipe-info ul { list-style: none; }
+        .recipe-info li { padding: 8px 0; display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 500; }
+        .recipe-info li i { color: var(--success-green); font-size: 18px; }
 
         /* AUTHORITY */
-        .authority { padding: 100px 0; background: var(--bg-light); }
-        .auth-flex { display: flex; flex-wrap: wrap; align-items: center; gap: 60px; }
-        .auth-img { flex: 1; min-width: 300px; }
-        .auth-img img { border-radius: 20px; box-shadow: -20px 20px 0 var(--accent); }
-        .auth-content { flex: 1.5; min-width: 300px; }
-        .auth-content h2 { margin-bottom: 30px; color: var(--primary); }
-        .auth-content p { margin-bottom: 20px; font-size: 18px; }
-        .auth-signature { font-family: 'Playfair Display', serif; font-style: italic; font-size: 28px; color: var(--accent); margin-top: 30px; }
+        .authority { padding: 120px 0; background: var(--bg-cream); position: relative; }
+        .auth-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 80px; }
+        .auth-img { flex: 1; min-width: 320px; position: relative; }
+        .auth-img img { border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); z-index: 2; position: relative; }
+        .auth-img::after { content: ''; position: absolute; top: 40px; left: -40px; width: 100%; height: 100%; border: 10px solid var(--action-gold); border-radius: 30px; z-index: 1; }
+        .auth-content { flex: 1.5; min-width: 320px; }
+        .auth-content h2 { margin-bottom: 40px; font-size: var(--h2); color: var(--primary-brown); }
+        .auth-content p { margin-bottom: 25px; font-size: 19px; line-height: 1.8; color: #444; }
+        .auth-signature { font-family: var(--font-serif); font-style: italic; font-size: 36px; color: var(--action-gold); margin-top: 40px; font-weight: 800; }
 
-        /* BONUS STACK */
-        .bonuses { padding: 100px 0; background: var(--primary); color: #fff; }
-        .bonus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-top: 50px; }
-        .bonus-item { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px; border: 1px dashed rgba(255,255,255,0.2); position: relative; }
-        .bonus-badge { position: absolute; top: -10px; right: 20px; background: var(--success); color: #fff; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: 800; }
-        .bonus-item h3 { color: var(--accent); font-size: 20px; margin-bottom: 10px; }
-        .bonus-val { font-size: 14px; text-decoration: line-through; opacity: 0.6; }
-
-        /* PRICING */
-        .pricing { padding: 100px 0; background: #fff; text-align: center; }
-        .pricing-box { max-width: 600px; margin: 0 auto; padding: 60px; border-radius: 30px; background: var(--primary); color: #fff; box-shadow: 0 30px 70px rgba(62, 39, 35, 0.3); border: 2px solid var(--accent); }
-        .price-anchor { font-size: 18px; text-decoration: line-through; opacity: 0.6; margin-bottom: 10px; display: block; }
-        .price-main { font-size: 72px; font-weight: 900; color: var(--accent); display: block; line-height: 1; font-family: 'Playfair Display', serif; }
-        .price-subs { font-size: 24px; font-weight: 700; margin: 15px 0 40px; display: block; }
-
-        /* FAQ */
-        .faq { padding: 80px 0; background: #fff; }
-        .faq h2 { text-align: center; margin-bottom: 50px; color: var(--primary); }
-        .faq-container { max-width: 800px; margin: 0 auto; }
-        details { border-bottom: 1px solid #eee; padding: 20px 0; }
-        summary { cursor: pointer; font-weight: 700; font-size: 18px; list-style: none; display: flex; justify-content: space-between; align-items: center; }
-        summary::after { content: '+'; font-size: 24px; color: var(--accent); transition: transform 0.3s; }
-        details[open] summary::after { transform: rotate(45deg); }
-        .faq-body { padding-top: 15px; color: #666; }
-
-        /* FOOTER */
-        footer { padding: 64px 0; background: #1a1a1a; color: #777; text-align: center; font-size: 13px; }
-        .footer-icons { display: flex; justify-content: center; gap: 30px; margin-bottom: 30px; opacity: 0.4; filter: grayscale(1); }
-        .footer-links a { color: #777; margin: 0 15px; text-decoration: none; }
+        /* PRICING BOX */
+        .pricing { 
+            padding: 120px 0; 
+            background: linear-gradient(rgba(45, 26, 18, 0.95), rgba(45, 26, 18, 0.95)), url('https://images.unsplash.com/photo-1549931319-a545dcf3bc7c?w=1600');
+            background-size: cover; background-attachment: fixed;
+            text-align: center; color: #fff;
+        }
+        .pricing-box { 
+            max-width: 650px; margin: 0 auto; padding: 80px 60px; border-radius: 30px; 
+            background: var(--primary-brown); border: 2px solid var(--action-gold); 
+            box-shadow: 0 40px 100px rgba(0,0,0,0.5); position: relative;
+        }
+        .pricing-box .badge-promo { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: var(--urgency-orange); color: #fff; padding: 10px 30px; border-radius: 50px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .price-anchor { font-size: 22px; text-decoration: line-through; opacity: 0.5; margin-bottom: 20px; display: block; font-weight: 600; }
+        .price-main { font-size: clamp(60px, 10vw, 92px); font-weight: 900; color: var(--action-gold); display: block; line-height: 1; font-family: var(--font-serif); margin-bottom: 10px; }
+        .price-subs { font-size: 28px; font-weight: 800; margin-bottom: 48px; display: block; text-transform: uppercase; letter-spacing: 1px; }
 
         /* NOTIFICATIONS */
         .purchase-notif { 
-            position: fixed; bottom: 20px; left: 20px; background: #fff; padding: 15px 25px; 
-            border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: flex; 
-            align-items: center; gap: 15px; z-index: 3000; transform: translateX(-400px); 
-            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            position: fixed; bottom: 30px; left: 30px; background: #fff; padding: 20px 30px; 
+            border-radius: 15px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); display: flex; 
+            align-items: center; gap: 20px; z-index: 3000; transform: translateX(-500px); 
+            transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            border-left: 6px solid var(--success-green);
         }
         .purchase-notif.show { transform: translateX(0); }
-        .notif-img { width: 40px; height: 40px; background: var(--success); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; }
+        .notif-icon { width: 45px; height: 45px; background: var(--success-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 20px; }
+        
+        /* FOOTER */
+        footer { padding: 80px 0; background: #111; color: #555; text-align: center; font-size: 14px; }
+        .footer-logo { font-family: var(--font-serif); font-size: 24px; color: #fff; margin-bottom: 30px; display: block; }
+        .footer-links { margin-bottom: 30px; }
+        .footer-links a { color: #888; text-decoration: none; margin: 0 20px; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--action-gold); }
 
         @media (max-width: 768px) {
-            .hero { padding: 120px 0 60px; }
-            .pricing-box { padding: 40px 20px; }
-            .price-main { font-size: 52px; }
+            .hero { padding: 140px 0 80px; text-align: center; }
+            .hero-inner { justify-content: center; }
+            .pricing-box { padding: 60px 30px; }
+            .price-main { font-size: 62px; }
+            .auth-img::after { display: none; }
         }
     </style>
 </head>
 <body>
 
     <div class="top-bar">
-        OFERTA ATIVADA: termina em <span id="timer">14:59</span>
+        ⚠️ ATENÇÃO: Desconto especial liberado por tempo limitado! <span>14:59</span>
     </div>
 
     <!-- HERO -->
     <header class="hero">
-        <div class="container">
-            <h1>Aprenda a fazer os Pães Artesanais Sem Glúten mais incríveis da sua vida.</h1>
-            <p>O método passo a passo para conquistar pães fofinhos, elásticos e com sabor de verdade — sem depender de farinhas caras ou técnicas impossíveis.</p>
-            <a href="#oferta" class="cta-btn">QUERO MEU ACESSO AGORA</a>
+        <div class="container hero-inner">
+            <div class="hero-content">
+                <span class="chef-badge">Método Chef Helena Barros</span>
+                <h1>Aprenda a fazer os Pães Artesanais Sem Glúten mais incríveis da sua vida.</h1>
+                <p>Descubra o segredo da elasticidade perfeita para criar pães fofinhos, aerados e com sabor de padaria artesanal — 100% livre de glúten.</p>
+                <a href="#oferta" class="cta-btn">QUERO MEU ACESSO AGORA</a>
+            </div>
+        </div>
+        <div class="hero-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z"></path>
+            </svg>
         </div>
     </header>
 
     <!-- PAIN -->
     <section class="pain">
         <div class="container">
-            <h2>Por que é tão difícil fazer pão sem glúten?</h2>
+            <h2>Pare de desperdiçar ingredientes com receitas que não funcionam.</h2>
             <div class="pain-grid">
                 <div class="pain-item">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <h3>Textura de Areia</h3>
-                    <p>Muitas receitas ficam secas e esfarelam só de tocar, perdendo o prazer de comer.</p>
+                    <i class="fas fa-biohazard"></i>
+                    <h3>Pare o Inchaço</h3>
+                    <p>O glúten é o maior vilão da inflamação silenciosa. Recupere sua energia e leveza hoje mesmo.</p>
                 </div>
                 <div class="pain-item">
-                    <i class="fas fa-clock"></i>
-                    <h3>Dura poucas horas</h3>
-                    <p>O pão sai bonito do forno, mas depois de frio vira uma "pedra" impossível de mastigar.</p>
+                    <i class="fas fa-bread-slice"></i>
+                    <h3>Textura de Areia? Nunca mais!</h3>
+                    <p>Aprenda a técnica correta para ter pães que dobram sem quebrar e derretem na boca.</p>
                 </div>
                 <div class="pain-item">
-                    <i class="fas fa-money-bill-wave"></i>
-                    <h3>Ingredientes Desperdiçados</h3>
-                    <p>Você gasta fortunas em farinhas especiais e a receita simplesmente não dá certo.</p>
+                    <i class="fas fa-wallet"></i>
+                    <h3>Economize de Verdade</h3>
+                    <p>Pare de comprar pães industriais caros e sem gosto. Faça os seus por uma fração do preço.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TRANSFORMATION -->
-    <section class="transformation">
-        <div class="container">
-            <h2>A Mudança que você precisa</h2>
-            <div class="compare-grid">
-                <div class="compare-card bad">
-                    <img src="https://images.unsplash.com/photo-1589367948598-60037a9f7324?w=600" alt="Pão comum sem glúten">
-                    <h3>Pão Sem Técnica</h3>
-                    <p>Seco, quebradiço, sem cor e com gosto de papelão.</p>
-                </div>
-                <div class="compare-card good">
-                    <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc7c?w=600" alt="Nosso pão fofinho">
-                    <h3>Método Chef Helena</h3>
-                    <p>Fofinho, elástico, dourado e com sabor de padaria artesanal.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- RECIPES -->
+    <!-- RECIPES/MODULES -->
     <section class="recipes">
         <div class="container">
-            <h2>O que você vai dominar:</h2>
+            <h2 style="font-size: var(--h2);">O que você vai dominar neste treinamento:</h2>
             <div class="recipe-grid">
                 <div class="recipe-card">
                     <div class="recipe-img"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600" alt="Pão de Forma"></div>
                     <div class="recipe-info">
-                        <h3>Pão de Forma Caseiro</h3>
-                        <p>O pão perfeito para o café da manhã, que mantém a maciez por dias.</p>
+                        <h3>Módulo 1: Pães de Forma</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Pão de Forma Branco Fofinho</li>
+                            <li><i class="fas fa-check-circle"></i> Pão Integral com Grãos</li>
+                            <li><i class="fas fa-check-circle"></i> O segredo da conservação</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="recipe-card">
                     <div class="recipe-img"><img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc7c?w=600" alt="Baguete"></div>
                     <div class="recipe-info">
-                        <h3>Baguete Francesa</h3>
-                        <p>Crocante por fora e aerada por dentro. A rainha das mesas.</p>
+                        <h3>Módulo 2: Casca & Crocância</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Baguete Francesa Real</li>
+                            <li><i class="fas fa-check-circle"></i> Pão Italiano de Crosta Dura</li>
+                            <li><i class="fas fa-check-circle"></i> Pão de Hambúrguer Elástico</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="recipe-card">
-                    <div class="recipe-img"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600" alt="Massa de Pizza"></div>
+                    <div class="recipe-img"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600" alt="Pizza"></div>
                     <div class="recipe-info">
-                        <h3>Pizza de Fermentação Longa</h3>
-                        <p>Uma massa elástica que aceita qualquer recheio e assa perfeitamente.</p>
+                        <h3>Módulo 3: Massas Especiais</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Pizza de Fermentação Longa</li>
+                            <li><i class="fas fa-check-circle"></i> Focaccia com Ervas Finas</li>
+                            <li><i class="fas fa-check-circle"></i> Ciabatta Irresistível</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -258,43 +262,16 @@
 
     <!-- AUTHORITY -->
     <section class="authority">
-        <div class="container auth-flex">
+        <div class="container auth-inner">
             <div class="auth-img">
                 <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800" alt="Chef Helena Barros">
             </div>
             <div class="auth-content">
-                <h2>O Segredo da Panificação Inclusiva</h2>
-                <p>Eu sou a **Chef Helena Barros** e dediquei os últimos 5 anos a resolver um único problema: a falta de elasticidade nos preparos sem glúten.</p>
-                <p>Depois de descobrir que minha filha Sofia tinha restrições severas, eu não aceitei que ela nunca comeria um pão fofinho de verdade. Foram milhares de testes até chegar na minha "Fórmula de Liga Estrutural".</p>
-                <p>Hoje, eu não ensino apenas receitas. Eu ensino a liberdade de voltar a comer com prazer e servir sua família com orgulho.</p>
+                <h2>A Missão por trás do Método</h2>
+                <p>Eu sou a **Chef Helena Barros** e minha jornada começou no dia em que descobri que o prazer de comer pão estava me adoecendo.</p>
+                <p>Depois de centenas de tentativas frustradas com receitas "milagrosas" da internet que viravam pedra, decidi aplicar a ciência da gastronomia para recriar a estrutura do trigo sem o glúten.</p>
+                <p>O resultado é este treinamento: a maior compilação técnica de panificação inclusiva do Brasil. Eu não quero que você apenas faça pão, eu quero que você tenha a liberdade de comer com saúde e prazer novamente.</p>
                 <div class="auth-signature">Chef Helena Barros</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- BONUSES -->
-    <section class="bonuses">
-        <div class="container">
-            <h2 style="text-align: center;">Presentes Exclusivos para Você:</h2>
-            <div class="bonus-grid">
-                <div class="bonus-item">
-                    <div class="bonus-badge">GRÁTIS</div>
-                    <h3>Manual do Mix Caseiro</h3>
-                    <p>Pare de comprar misturas prontas caras e aprenda a criar a sua.</p>
-                    <span class="bonus-val">Valor: R$ 97,00</span>
-                </div>
-                <div class="bonus-item">
-                    <div class="bonus-badge">GRÁTIS</div>
-                    <h3>Guia de Substituições</h3>
-                    <p>Como substituir leite, ovos e açúcar em qualquer receita.</p>
-                    <span class="bonus-val">Valor: R$ 47,00</span>
-                </div>
-                <div class="bonus-item">
-                    <div class="bonus-badge">GRÁTIS</div>
-                    <h3>Pães de Festa e Natal</h3>
-                    <p>Panetones e pães trançados para datas especiais.</p>
-                    <span class="bonus-val">Valor: R$ 67,00</span>
-                </div>
             </div>
         </div>
     </section>
@@ -303,34 +280,22 @@
     <section id="oferta" class="pricing">
         <div class="container">
             <div class="pricing-box">
-                <span class="price-anchor">DE R$ 1.200,00 POR APENAS</span>
-                <span class="price-main">12x R$ 6,73</span>
+                <div class="badge-promo">OFERTA ÚNICA HOJE</div>
+                <span class="price-anchor">DE R$ 1.497,00 POR APENAS</span>
+                <span class="price-main">12x R$ 7,02</span>
                 <span class="price-subs">ou R$ 67,00 à vista</span>
-                <a href="#" class="cta-btn">QUERO MEU ACESSO AGORA</a>
-                <p style="margin-top: 30px; font-size: 14px; opacity: 0.7;">🔒 Pagamento 100% Seguro • Acesso Imediato</p>
-                <img src="https://cdn-icons-png.flaticon.com/512/6559/6559124.png" alt="Garantia" style="width: 100px; margin: 30px auto 0; filter: brightness(0) invert(1);">
-                <p style="font-size: 13px; font-weight: 700; margin-top: 10px;">7 DIAS DE GARANTIA INCONDICIONAL</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq">
-        <div class="container">
-            <h2>Dúvidas Frequentes</h2>
-            <div class="faq-container">
-                <details>
-                    <summary>As receitas são difíceis?</summary>
-                    <div class="faq-body">Não, o método foi criado para quem nunca fez pão na vida. Você vai aprender a técnica do zero.</div>
-                </details>
-                <details>
-                    <summary>Como recebo o curso?</summary>
-                    <div class="faq-body">Imediatamente após a compra, você recebe um e-mail com seus dados de acesso vitalício.</div>
-                </details>
-                <details>
-                    <summary>E se eu não gostar?</summary>
-                    <div class="faq-body">Você tem 7 dias para testar. Se não gostar, devolvemos 100% do seu dinheiro.</div>
-                </details>
+                
+                <a href="#" class="cta-btn">SIM! QUERO MEU ACESSO IMEDIATO →</a>
+                
+                <p style="margin-top: 40px; font-size: 15px; opacity: 0.8; font-weight: 600;">
+                    🔒 Compra 100% Segura • Acesso Vitalício • Garantia de 7 Dias
+                </p>
+                
+                <div style="display: flex; justify-content: center; gap: 20px; margin-top: 30px; opacity: 0.5;">
+                    <i class="fab fa-cc-visa fa-2x"></i>
+                    <i class="fab fa-cc-mastercard fa-2x"></i>
+                    <i class="fas fa-lock fa-2x"></i>
+                </div>
             </div>
         </div>
     </section>
@@ -338,26 +303,22 @@
     <!-- FOOTER -->
     <footer>
         <div class="container">
-            <div class="footer-icons">
-                <i class="fab fa-cc-visa fa-3x"></i>
-                <i class="fab fa-cc-mastercard fa-3x"></i>
-                <i class="fas fa-shield-alt fa-3x"></i>
-            </div>
+            <span class="footer-logo">Helena Barros — Panificação Premium</span>
             <div class="footer-links">
-                <a href="#">Termos</a>
-                <a href="#">Privacidade</a>
-                <a href="#">Suporte</a>
+                <a href="#">Termos de Uso</a>
+                <a href="#">Políticas de Privacidade</a>
+                <a href="#">Suporte ao Aluno</a>
             </div>
-            <p style="margin-top: 20px;">© <span id="year"></span> Pães Artesanais Premium. Todos os direitos reservados.</p>
+            <p>© <span id="year"></span> Todos os direitos reservados. Este site não é afiliado ao Facebook.</p>
         </div>
     </footer>
 
-    <!-- PURCHASE NOTIFICATION -->
+    <!-- NOTIFICATION -->
     <div class="purchase-notif" id="notif">
-        <div class="notif-img"><i class="fas fa-shopping-basket"></i></div>
+        <div class="notif-icon"><i class="fas fa-check"></i></div>
         <div>
-            <div style="font-weight: 700; font-size: 14px;"><span id="notif-name">Maria</span> de <span id="notif-city">São Paulo</span></div>
-            <div style="font-size: 12px; color: #666;">acaba de garantir o acesso!</div>
+            <div style="font-weight: 800; font-size: 15px;"><span id="notif-name">Juliana</span> de <span id="notif-city">São Paulo</span></div>
+            <div style="font-size: 13px; color: #666; font-weight: 500;">acaba de entrar para a turma!</div>
         </div>
     </div>
 
@@ -368,20 +329,20 @@
         // TIMER
         function startTimer(duration, display) {
             var timer = duration, minutes, seconds;
-            setInterval(function () {
+            const interval = setInterval(function () {
                 minutes = parseInt(timer / 60, 10);
                 seconds = parseInt(timer % 60, 10);
                 minutes = minutes < 10 ? "0" + minutes : minutes;
                 seconds = seconds < 10 ? "0" + seconds : seconds;
                 display.textContent = minutes + ":" + seconds;
-                if (--timer < 0) { timer = duration; }
+                if (--timer < 0) { clearInterval(interval); }
             }, 1000);
         }
-        startTimer(60 * 15 - 1, document.querySelector('#timer'));
+        startTimer(60 * 15 - 1, document.querySelector('.top-bar span'));
 
-        // NOTIFICATIONS SIMULATION
-        const names = ["Juliana", "Ricardo", "Carla", "Beatriz", "Marcos", "Fernanda", "Elaine"];
-        const cities = ["Curitiba-PR", "Salvador-BA", "Porto Alegre-RS", "Natal-RN", "Brasília-DF", "Rio de Janeiro-RJ"];
+        // NOTIFICATIONS
+        const names = ["Ana", "Cláudia", "Mariana", "Fernanda", "Beatriz", "Ricardo", "Sônia"];
+        const cities = ["Curitiba-PR", "Salvador-BA", "Porto Alegre-RS", "Goiânia-GO", "Brasília-DF", "Rio de Janeiro-RJ"];
         const notif = document.getElementById('notif');
         const notifName = document.getElementById('notif-name');
         const notifCity = document.getElementById('notif-city');
@@ -390,13 +351,11 @@
             notifName.textContent = names[Math.floor(Math.random() * names.length)];
             notifCity.textContent = cities[Math.floor(Math.random() * cities.length)];
             notif.classList.add('show');
-            setTimeout(() => {
-                notif.classList.remove('show');
-            }, 4000);
+            setTimeout(() => { notif.classList.remove('show'); }, 4000);
         }
 
-        setInterval(showNotif, 12000);
-        setTimeout(showNotif, 3000);
+        setInterval(showNotif, 15000);
+        setTimeout(showNotif, 4000);
     </script>
 </body>
 </html>
